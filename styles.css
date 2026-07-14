@@ -1635,3 +1635,372 @@ h1 {
     font-size: 18px;
   }
 }
+
+/* Vyladěná mobilní verze */
+@media (max-width: 760px) {
+  :root {
+    --page: calc(100% - 24px);
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Kompaktnější hlavička a přehlednější mobilní menu */
+  .site-header {
+    height: 78px;
+  }
+
+  .brand-logo,
+  .footer-brand .brand-logo {
+    width: 180px;
+    height: 56px;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-toggle::before { top: 12px; }
+  .menu-toggle span { top: 21px; }
+  .menu-toggle::after { top: 30px; }
+
+  .menu-toggle[aria-expanded="true"]::before,
+  .menu-toggle[aria-expanded="true"]::after {
+    top: 21px;
+  }
+
+  .site-nav {
+    height: 100dvh;
+    padding: 104px 28px 32px;
+    justify-content: flex-start;
+    gap: 0;
+    overflow-y: auto;
+  }
+
+  .site-nav > a:not(.nav-join) {
+    padding: 10px 4px;
+    color: var(--cream);
+    font-family: "Oldschool Grotesk", Impact, sans-serif;
+    font-size: 27px;
+    line-height: 1.05;
+    text-transform: none;
+  }
+
+  .site-nav > a:not(.nav-join)[aria-current="page"] {
+    color: var(--yellow);
+  }
+
+  .nav-socials {
+    margin: 17px 0 12px;
+    gap: 6px;
+  }
+
+  .site-nav .nav-social {
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+  }
+
+  .site-nav .nav-join {
+    margin-top: 5px;
+    padding: 11px 20px 10px;
+    font-size: 21px;
+  }
+
+  /* Carousel: výšku určuje pouze aktivní slide, ovládání má vlastní prostor */
+  .hero-shell {
+    padding-bottom: 14px;
+  }
+
+  .hero-slider,
+  .hero-slides {
+    min-height: 0;
+  }
+
+  .hero-slides {
+    display: block;
+  }
+
+  .hero-slide {
+    display: none;
+  }
+
+  .hero-slide.is-active {
+    display: block;
+  }
+
+  .hero-slide .hero {
+    height: auto;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-copy {
+    padding: 28px 24px 32px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(52px, 15.5vw, 66px);
+    line-height: 0.98;
+  }
+
+  .hero-copy > p:not(.eyebrow) {
+    margin: 20px 0 25px;
+    font-size: 17px;
+    line-height: 1.43;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .actions .button {
+    width: 100%;
+    min-height: 50px;
+    padding-inline: 18px;
+    font-size: 18px;
+  }
+
+  .hero-visual {
+    min-height: 390px;
+  }
+
+  .hero-team-photo {
+    width: 112%;
+    height: 100%;
+  }
+
+  .slider-arrow {
+    width: 42px;
+    height: 42px;
+    top: auto;
+    bottom: 15px;
+    background: var(--yellow);
+    transform: none;
+  }
+
+  .slider-arrow:hover {
+    background: var(--yellow);
+    transform: none;
+  }
+
+  .slider-prev { left: 16px; }
+  .slider-next { right: 16px; }
+
+  .slider-dots {
+    bottom: 29px;
+  }
+
+  /* Pozvánka v carouselu: celý vizuál nahoře, čitelný text pod ním */
+  .hero-slide-event {
+    min-height: 0;
+    padding-top: 52.35%;
+    flex-direction: column;
+    background-color: var(--pink);
+    background-image: url("assets/images/prochazka-praha13.webp");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+
+  .hero-slide-event.is-active {
+    display: flex;
+  }
+
+  .event-slide-copy {
+    width: 100%;
+    max-width: none;
+    position: relative;
+    inset: auto;
+    margin: 0;
+    padding: 23px 22px 78px;
+    border-radius: 0 0 var(--radius) var(--radius);
+    background: var(--cream);
+    box-shadow: none;
+  }
+
+  .event-slide-copy h2 {
+    margin-bottom: 8px;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .event-slide-copy p {
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.42;
+  }
+
+  .event-slide-copy .button {
+    min-height: 48px;
+    padding-inline: 17px;
+    font-size: 17px;
+  }
+
+  /* Úvody vnitřních stránek */
+  .page-hero {
+    padding: 30px 0 82px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(52px, 15vw, 62px);
+    line-height: 0.98;
+  }
+
+  .page-hero p:last-child {
+    margin-top: 19px;
+    font-size: 17px;
+    line-height: 1.43;
+  }
+
+  .page-main {
+    margin-top: -48px;
+    padding-bottom: 52px;
+  }
+
+  .page-panel {
+    padding: 22px 18px;
+  }
+
+  .section-title {
+    margin-bottom: 28px;
+  }
+
+  .section-title h2 {
+    margin-bottom: 10px;
+    font-size: 38px;
+    line-height: 1.02;
+  }
+
+  .section-title p {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  /* Náš tým: menší prázdno nad titulkem a výrazně větší skupina */
+  .team-hero-copy {
+    padding: 27px 0 20px;
+  }
+
+  .team-hero-copy h1 {
+    font-size: clamp(54px, 15.5vw, 62px);
+    line-height: 0.98;
+  }
+
+  .team-hero-copy > p:last-child {
+    margin-top: 18px;
+    font-size: 17px;
+    line-height: 1.42;
+  }
+
+  .team-hero-photo {
+    height: 410px;
+    padding-top: 0;
+  }
+
+  .team-hero-photo img {
+    width: 118%;
+    max-width: none;
+    max-height: 395px;
+    transform: scale(1.13);
+    transform-origin: center bottom;
+  }
+
+  .team-page-main {
+    padding-top: 14px;
+  }
+
+  /* Karty Přidej se zůstanou stejně velké a lépe se čtou */
+  .join-card {
+    min-height: 0;
+    padding: 25px 23px;
+  }
+
+  .join-card h2 {
+    margin-bottom: 15px;
+    font-size: 34px;
+    line-height: 1.03;
+  }
+
+  .join-card p {
+    font-size: 17px;
+    line-height: 1.47;
+  }
+
+  .join-actions {
+    padding-top: 25px;
+  }
+
+  /* Kratší a kompaktnější zápatí */
+  .site-footer {
+    padding: 34px 0 26px;
+  }
+
+  .footer-grid {
+    gap: 20px;
+    align-items: start;
+  }
+
+  .footer-brand {
+    margin-bottom: 11px;
+  }
+
+  .footer-brand .brand-logo {
+    width: 210px;
+    height: 66px;
+  }
+
+  .site-footer p {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .footer-links {
+    gap: 10px 19px;
+    font-size: 16px;
+  }
+
+  .footer-bottom {
+    margin-top: 27px;
+    padding-top: 17px;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 390px) {
+  .brand-logo {
+    width: 168px;
+    height: 52px;
+  }
+
+  .hero-copy {
+    padding-inline: 20px;
+  }
+
+  .hero-copy h1,
+  .page-hero h1,
+  .team-hero-copy h1 {
+    font-size: 52px;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .team-hero-photo {
+    height: 375px;
+  }
+
+  .team-hero-photo img {
+    max-height: 365px;
+  }
+}
