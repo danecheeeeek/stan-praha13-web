@@ -1465,3 +1465,38 @@ h3 {
     top: 50%;
   }
 }
+/* Finální překrytí týmové fotografie přes bílý panel */
+
+.team-page-hero,
+.team-hero-grid {
+  overflow: visible;
+}
+
+.team-hero-photo {
+  position: relative;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.team-page-main {
+  position: relative;
+  z-index: 2;
+}
+
+.team-page-main > .page-panel {
+  position: relative;
+  z-index: 1;
+}
+
+/* Na mobilu vysuneme bílý panel do magenty.
+   Fotografie týmu zůstane nad jeho horní hranou. */
+@media (max-width: 760px) {
+  .team-page-main {
+    margin-top: -42px;
+    padding-top: 0;
+  }
+
+  .team-page-main > .page-panel {
+    padding-top: 52px;
+  }
+}
