@@ -1500,3 +1500,31 @@ h3 {
     padding-top: 52px;
   }
 }
+/* Spodní okraj týmu přesně na horním okraji bílého panelu */
+
+@media (min-width: 981px) {
+  .team-page-hero .team-hero-photo img {
+    height: 535px;
+    margin-bottom: 65px;
+    transform: none;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 980px) {
+  .team-page-hero .team-hero-photo img {
+    height: 485px;
+    margin-bottom: 65px;
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .team-page-main {
+    margin-top: -42px;
+    padding-top: 0;
+  }
+
+  .team-page-hero .team-hero-photo img {
+    transform: translateY(-42px);
+  }
+}
