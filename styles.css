@@ -1433,3 +1433,35 @@ h3 {
     transition: none !important;
   }
 }
+/* Finální opravy umístění fotografií a mobilního carouselu */
+
+@media (min-width: 761px) {
+  .team-page-hero .team-hero-photo img {
+    transform: translateY(-14px);
+  }
+}
+
+@media (max-width: 760px) {
+  /* V prvním okně bude stejně jako ve druhém:
+     fotografie nahoře, text dole. */
+  .hero {
+    grid-template-areas:
+      "visual"
+      "copy";
+  }
+
+  .hero .hero-visual {
+    grid-area: visual;
+  }
+
+  .hero .hero-copy {
+    grid-area: copy;
+    justify-content: flex-start;
+    padding: 50px clamp(42px, 14vw, 54px) 12px;
+  }
+
+  /* Šipky zůstanou přesně mezi fotkou a textem. */
+  .slider-arrow {
+    top: 50%;
+  }
+}
