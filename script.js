@@ -1,131 +1,140 @@
-const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".site-nav");
+(() => {
+  "use strict";
 
-if (menuButton && nav) {
+  const menuButton = document.querySelector(".menu-toggle");
+  const navigation = document.querySelector(".site-nav");
+
   const closeMenu = () => {
+    if (!menuButton || !navigation) return;
     menuButton.setAttribute("aria-expanded", "false");
-    nav.classList.remove("open");
+    menuButton.setAttribute("aria-label", "Otevřít menu");
+    navigation.classList.remove("open");
     document.body.classList.remove("menu-open");
   };
 
-  menuButton.addEventListener("click", () => {
-    const willOpen = menuButton.getAttribute("aria-expanded") !== "true";
-    menuButton.setAttribute("aria-expanded", String(willOpen));
-    nav.classList.toggle("open", willOpen);
-    document.body.classList.toggle("menu-open", willOpen);
-  });
+  if (menuButton && navigation) {
+    menuButton.addEventListener("click", () => {
+      const willOpen = menuButton.getAttribute("aria-expanded") !== "true";
+      menuButton.setAttribute("aria-expanded", String(willOpen));
+      menuButton.setAttribute("aria-label", willOpen ? "Zavřít menu" : "Otevřít menu");
+      navigation.classList.toggle("open", willOpen);
+      document.body.classList.toggle("menu-open", willOpen);
+    });
 
-  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
-  });
-}
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-const revealItems = document.querySelectorAll(".reveal");
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+    const desktopQuery = window.matchMedia("(min-width: 981px)");
+    const handleDesktop = (event) => {
+      if (event.matches) closeMenu();
+    };
+    desktopQuery.addEventListener?.("change", handleDesktop);
+  }
+
+  document.querySelectorAll("[data-hero-slider]").forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll("[data-hero-slide]"));
+    const dots = Array.from(slider.querySelectorAll("[data-slider-dot]"));
+    const previousButton = slider.querySelector("[data-slider-prev]");
+    const nextButton = slider.querySelector("[data-slider-next]");
+
+    if (slides.length < 2) return;
+
+    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+    let autoplayTimer = null;
+    let touchStartX = null;
+    const autoplayDelay = 8000;
+
+    const showSlide = (requestedIndex) => {
+      activeIndex = (requestedIndex + slides.length) % slides.length;
+
+      slides.forEach((slide, index) => {
+        const active = index === activeIndex;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", String(!active));
+        if ("inert" in slide) slide.inert = !active;
+      });
+
+      dots.forEach((dot, index) => {
+        const active = index === activeIndex;
+        dot.classList.toggle("is-active", active);
+        if (active) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayTimer !== null) {
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = null;
       }
-    });
-  }, { threshold: 0.12 });
+    };
 
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("visible"));
-}
+    const startAutoplay = () => {
+      stopAutoplay();
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      autoplayTimer = window.setInterval(() => showSlide(activeIndex + 1), autoplayDelay);
+    };
 
-const heroSlider = document.querySelector("[data-hero-slider]");
-
-if (heroSlider) {
-  const slides = Array.from(heroSlider.querySelectorAll("[data-hero-slide]"));
-  const dots = Array.from(heroSlider.querySelectorAll("[data-slider-dot]"));
-  const previousButton = heroSlider.querySelector("[data-slider-prev]");
-  const nextButton = heroSlider.querySelector("[data-slider-next]");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let activeIndex = 0;
-  let autoplayTimer = null;
-  let touchStartX = 0;
-
-  const showSlide = (index) => {
-    activeIndex = (index + slides.length) % slides.length;
-
-    slides.forEach((slide, slideIndex) => {
-      const isActive = slideIndex === activeIndex;
-      slide.classList.toggle("is-active", isActive);
-      slide.setAttribute("aria-hidden", String(!isActive));
-      slide.toggleAttribute("inert", !isActive);
-    });
-
-    dots.forEach((dot, dotIndex) => {
-      const isActive = dotIndex === activeIndex;
-      dot.classList.toggle("is-active", isActive);
-      if (isActive) dot.setAttribute("aria-current", "true");
-      else dot.removeAttribute("aria-current");
-    });
-  };
-
-  const stopAutoplay = () => {
-    if (autoplayTimer) window.clearInterval(autoplayTimer);
-    autoplayTimer = null;
-  };
-
-  const startAutoplay = () => {
-    stopAutoplay();
-    if (!reducedMotion && slides.length > 1) {
-      autoplayTimer = window.setInterval(() => showSlide(activeIndex + 1), 7000);
-    }
-  };
-
-  previousButton?.addEventListener("click", () => {
-    showSlide(activeIndex - 1);
-    startAutoplay();
-  });
-
-  nextButton?.addEventListener("click", () => {
-    showSlide(activeIndex + 1);
-    startAutoplay();
-  });
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      showSlide(index);
-      startAutoplay();
-    });
-  });
-
-  heroSlider.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") {
+    previousButton?.addEventListener("click", () => {
       showSlide(activeIndex - 1);
       startAutoplay();
-    }
-    if (event.key === "ArrowRight") {
+    });
+
+    nextButton?.addEventListener("click", () => {
       showSlide(activeIndex + 1);
       startAutoplay();
-    }
-  });
+    });
 
-  heroSlider.addEventListener("mouseenter", stopAutoplay);
-  heroSlider.addEventListener("mouseleave", startAutoplay);
-  heroSlider.addEventListener("focusin", stopAutoplay);
-  heroSlider.addEventListener("focusout", (event) => {
-    if (!heroSlider.contains(event.relatedTarget)) startAutoplay();
-  });
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        startAutoplay();
+      });
+    });
 
-  heroSlider.addEventListener("touchstart", (event) => {
-    touchStartX = event.changedTouches[0].clientX;
-    stopAutoplay();
-  }, { passive: true });
+    slider.addEventListener("pointerenter", stopAutoplay);
+    slider.addEventListener("pointerleave", startAutoplay);
+    slider.addEventListener("focusin", stopAutoplay);
+    slider.addEventListener("focusout", (event) => {
+      if (!slider.contains(event.relatedTarget)) startAutoplay();
+    });
 
-  heroSlider.addEventListener("touchend", (event) => {
-    const distance = event.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(distance) > 50) showSlide(activeIndex + (distance < 0 ? 1 : -1));
+    slider.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0]?.clientX ?? null;
+        stopAutoplay();
+      },
+      { passive: true }
+    );
+
+    slider.addEventListener(
+      "touchend",
+      (event) => {
+        if (touchStartX === null) return;
+        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+        const distance = touchEndX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(distance) > 55) showSlide(activeIndex + (distance < 0 ? 1 : -1));
+        startAutoplay();
+      },
+      { passive: true }
+    );
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopAutoplay();
+      else startAutoplay();
+    });
+
+    showSlide(activeIndex);
     startAutoplay();
-  }, { passive: true });
-
-  showSlide(0);
-  startAutoplay();
-}
+  });
+})();
