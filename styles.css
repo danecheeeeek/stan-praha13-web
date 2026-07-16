@@ -1443,3 +1443,54 @@ h3 {
     transition: none !important;
   }
 }
+/* Tým vyčnívající přes horní okraj bílého panelu */
+.team-page-hero {
+  position: relative;
+  overflow: visible;
+}
+
+.team-hero-grid {
+  position: relative;
+  overflow: visible;
+}
+
+/* Fotka musí být nad bílým panelem */
+.team-hero-photo {
+  position: relative;
+  z-index: 3;
+  overflow: visible;
+}
+
+.team-hero-photo img {
+  position: relative;
+  z-index: 3;
+}
+
+/* Text zůstane vždy bezpečně nad fotkou */
+.team-hero-copy {
+  position: relative;
+  z-index: 4;
+}
+
+/* Bílý panel leží pod skupinovou fotografií */
+.team-page-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* První karta začne až pod přesahem fotografie */
+.team-page-main .page-panel {
+  padding-top: 78px;
+}
+
+/* Mobil */
+@media (max-width: 760px) {
+  .team-page-main {
+    margin-top: -70px;
+    padding-top: 28px;
+  }
+
+  .team-page-main .page-panel {
+    padding-top: 62px;
+  }
+}
