@@ -1540,3 +1540,15 @@ h3 {
     transform: translateY(-42px);
   }
 }
+/* Mobil: mezera mezi popiskem a společnou fotografií */
+
+@media (max-width: 760px) {
+  .team-page-hero .team-hero-photo {
+    box-sizing: border-box;
+    padding-top: 42px;
+  }
+
+  .team-page-hero .team-hero-photo img {
+    transform: translateY(-42px);
+  }
+}
