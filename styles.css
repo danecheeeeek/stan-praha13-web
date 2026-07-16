@@ -1494,71 +1494,43 @@ h3 {
     padding-top: 62px;
   }
 }
-Vlož tento kód úplně na konec souboru `styles.css`. Fotka týmu bude na PC i mobilu překrývat pouze horní okraj bílého rámečku. Text ani první kartu kandidáta nepřekryje.
+/* FINÁLNÍ OPRAVA:
+   skupinová fotka končí přesně na hraně bílého panelu */
 
-```css
-/* Tým vyčnívající přes horní okraj bílého panelu */
 .team-page-hero {
-  position: relative;
-  overflow: visible;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
-.team-hero-grid {
-  position: relative;
-  overflow: visible;
-}
-
-/* Fotka musí být nad bílým panelem */
-.team-hero-photo {
-  position: relative;
-  z-index: 3;
-  overflow: visible;
-}
-
+.team-hero-photo,
 .team-hero-photo img {
-  position: relative;
-  z-index: 3;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
-/* Text zůstane vždy bezpečně nad fotkou */
-.team-hero-copy {
-  position: relative;
-  z-index: 4;
-}
-
-/* Bílý panel leží pod skupinovou fotografií */
 .team-page-main {
-  position: relative;
-  z-index: 1;
+  position: relative !important;
+  z-index: 10 !important;
+  margin-top: -65px !important;
+  padding-top: 0 !important;
 }
 
-/* První karta začne až pod přesahem fotografie */
 .team-page-main .page-panel {
-  padding-top: 78px;
+  position: relative !important;
+  z-index: 10 !important;
+  padding-top: clamp(28px, 4vw, 54px) !important;
+  background: #ffffff !important;
 }
 
 /* Mobil */
 @media (max-width: 760px) {
   .team-page-main {
-    margin-top: -70px;
-    padding-top: 28px;
+    margin-top: -1px !important;
+    padding-top: 0 !important;
   }
 
   .team-page-main .page-panel {
-    padding-top: 62px;
+    margin-top: 0 !important;
+    padding-top: 18px !important;
   }
 }
-```
-
-Postup v GitHubu:
-
-1. Otevři `styles.css`.
-2. Klikni na tužku **Edit this file**.
-3. Sjeď úplně dolů.
-4. Za poslední `}` udělej nový řádek.
-5. Vlož celý kód výše.
-6. Klikni na **Commit changes**.
-7. Počkej na nové nasazení Cloudflare a obnov stránku.
-
-V `tym.html` nemusíš nic měnit.
-
