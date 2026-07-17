@@ -1052,19 +1052,22 @@ h3 {
   }
 
   .nav-socials {
-    margin: 18px 0 10px;
+    align-self: flex-start;
+    margin: 18px 0 10px -7px;
     gap: 10px;
   }
 
   .site-nav .nav-social {
-    width: 48px;
+    width: 55px;
     height: 48px;
+    place-items: center start;
+    padding: 8px 0;
   }
 
   .site-nav .nav-join {
     min-height: 58px;
     align-self: flex-start;
-    margin: 14px 0 0;
+    margin: 14px 0 0 0;
     padding: 16px 27px;
     font-size: clamp(25px, 6vw, 34px);
     line-height: 1;
@@ -1361,6 +1364,8 @@ h3 {
   .team-hero-photo {
     height: auto;
     padding-bottom: 0;
+    position: relative;
+    z-index: 3;
   }
 
   .team-hero-photo img {
@@ -1371,7 +1376,7 @@ h3 {
   }
 
   .team-page-main {
-    margin-top: 0;
+    margin-top: -54px;
     padding-top: 0;
   }
 

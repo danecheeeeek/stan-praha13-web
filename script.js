@@ -48,7 +48,6 @@
     let autoplayTimer = null;
     let touchStartX = null;
     const autoplayDelay = 8000;
-    const desktopCarousel = window.matchMedia("(min-width: 761px)");
 
     const showSlide = (requestedIndex) => {
       activeIndex = (requestedIndex + slides.length) % slides.length;
@@ -80,14 +79,9 @@
 
     const startAutoplay = () => {
       stopAutoplay();
-      // On phones the carousel changes only after an explicit tap or swipe.
-      // This prevents Safari from appearing to jump while the visitor scrolls.
-      if (!desktopCarousel.matches) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       autoplayTimer = window.setInterval(() => showSlide(activeIndex + 1), autoplayDelay);
     };
-
-    desktopCarousel.addEventListener?.("change", startAutoplay);
 
     previousButton?.addEventListener("click", () => {
       showSlide(activeIndex - 1);
@@ -106,8 +100,12 @@
       });
     });
 
-    slider.addEventListener("pointerenter", stopAutoplay);
-    slider.addEventListener("pointerleave", startAutoplay);
+    // Pauzu při najetí myší používáme jen na zařízeních se skutečnou myší.
+    // Dotykový telefon tak po prvním klepnutí nezůstane omylem zastavený.
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      slider.addEventListener("pointerenter", stopAutoplay);
+      slider.addEventListener("pointerleave", startAutoplay);
+    }
     slider.addEventListener("focusin", stopAutoplay);
     slider.addEventListener("focusout", (event) => {
       if (!slider.contains(event.relatedTarget)) startAutoplay();
