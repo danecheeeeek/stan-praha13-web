@@ -975,7 +975,8 @@ h3 {
 /* MailerLite newsletter trigger */
 .newsletter-trigger {
   position: fixed;
-  top: 58%;
+  top: auto; /* Zrušíme původní zarovnání nahoře */
+  bottom: 40px; /* Posuneme tlačítko dolů k okraji obrazovky na PC */
   right: 0;
   z-index: 45;
   display: inline-flex;
@@ -992,7 +993,7 @@ h3 {
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  transform: translateY(-50%);
+  transform: none; /* Zrušíme původní translateY posun */
   transition: background-color 160ms ease, color 160ms ease, padding-right 160ms ease;
 }
 
@@ -1401,17 +1402,19 @@ h3 {
 
  .team-hero-photo {
     height: auto;
-    padding-bottom: 54px;
+    padding-bottom: 0;
     position: relative;
     z-index: 3;
+    transform: translateY(-54px); /* Toto vás zvedne přesně o tolik, kolik ukrajuje bílý rámeček */
+    margin-bottom: -54px; /* Toto vyrovná prostor pod fotkou, aby neuskočil zbytek webu */
   }
 
   .team-hero-photo img {
     width: min(100%, 560px);
     height: auto;
-    max-height: 45vh;
+    max-height: none;
     object-fit: contain;
-    object-position: center bottom;
+    object-position: center bottom; /* Zajistí, že se fotka opře o spodní hranu */
   }
 
   .team-page-main {
@@ -1501,23 +1504,22 @@ h3 {
     gap: 8px;
   }
 }
-
 @media (max-width: 980px) {
   .newsletter-trigger {
     top: auto;
     right: 12px;
-    bottom: calc(20px + env(safe-area-inset-bottom));
-    min-height: 40px;
+    bottom: calc(20px + env(safe-area-inset-bottom)); /* Posune to na mobilu trochu níž nad spodní okraj */
+    min-height: 40px; /* Výrazné zmenšení tlačítka */
     padding: 8px 16px;
     border-radius: 999px;
-    font-size: 14px;
+    font-size: 14px; /* Menší text na mobilu */
     transform: none;
     box-shadow: 0 4px 12px rgba(67, 22, 42, 0.15);
   }
 
   .newsletter-trigger:hover,
   .newsletter-trigger:focus-visible {
-    padding-right: 18px;
+    padding-right: 16px;
   }
 
   body.menu-open .newsletter-trigger {
