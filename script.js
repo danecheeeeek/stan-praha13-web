@@ -141,4 +141,55 @@
     showSlide(activeIndex);
     startAutoplay();
   });
+
+  const newsletterFormId = "n7DU5l";
+  const newsletterStorageKey = "stan-praha13-newsletter-auto-shown";
+  const newsletterTriggers = document.querySelectorAll(".newsletter-trigger");
+
+  const rememberNewsletterShown = () => {
+    try {
+      window.sessionStorage.setItem(newsletterStorageKey, "1");
+    } catch {
+      // The form still works when private browsing blocks sessionStorage.
+    }
+  };
+
+  newsletterTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", rememberNewsletterShown);
+  });
+
+  if (document.body.hasAttribute("data-newsletter-auto")) {
+    let newsletterAlreadyShown = false;
+
+    try {
+      newsletterAlreadyShown = window.sessionStorage.getItem(newsletterStorageKey) === "1";
+    } catch {
+      newsletterAlreadyShown = false;
+    }
+
+    if (!newsletterAlreadyShown) {
+      const showNewsletter = () => {
+        try {
+          if (window.sessionStorage.getItem(newsletterStorageKey) === "1") return;
+        } catch {
+          // Continue even if sessionStorage is unavailable.
+        }
+
+        if (document.body.classList.contains("menu-open")) {
+          window.setTimeout(showNewsletter, 1000);
+          return;
+        }
+
+        if (typeof window.ml !== "function") {
+          window.setTimeout(showNewsletter, 500);
+          return;
+        }
+
+        rememberNewsletterShown();
+        window.ml("show", newsletterFormId, true);
+      };
+
+      window.setTimeout(showNewsletter, 5000);
+    }
+  }
 })();

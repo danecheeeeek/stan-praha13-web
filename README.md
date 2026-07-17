@@ -21,7 +21,30 @@ Poté otevřete `http://localhost:8080`.
 - `kontakt.html` – kontaktní údaje a sociální sítě
 - `zapojte-se.html` – pět možností zapojení včetně kampaně, podnětů a Mladých Starostů
 
-Texty, fotografie a odkazy lze před nasazením upravit přímo v HTML souborech. Na všech stránkách je vložený MailerLite Universal kód pro automatické zobrazení aktivního pop-up formuláře podle nastavení v účtu MailerLite.
+Texty, fotografie a odkazy lze před nasazením upravit přímo v HTML souborech.
+
+## Newsletter (MailerLite)
+
+Na všech šesti stránkách je právě jednou vložený MailerLite Universal kód účtu `2428393` a pevná bublina **Odebírat novinky**. Bublina otevírá formulář `n7DU5l`. Na počítači je vpravo, na mobilu vpravo dole nad ovládáním prohlížeče.
+
+Pouze na úvodní stránce `index.html` se formulář otevře automaticky po 5 sekundách. V rámci jedné relace prohlížeče se automaticky zobrazí nejvýše jednou. Ruční otevření pomocí bubliny zůstává dostupné na každé stránce.
+
+Vzhled vnitřku pop-upu se spravuje přímo v editoru MailerLite, nikoli v `styles.css`. Pro jednotný vzhled nastavte:
+
+- pozadí `#FFED00`, hlavní růžovou `#CE0F68` a krémovou `#FCF7E0`;
+- nadpis písmem Oldschool Grotesk a běžný text písmem Feature Text;
+- na počítači fotografii vlevo a formulář vpravo;
+- děkovací obrazovku ve stejných rozměrech, bez fotografie.
+
+Doporučený text děkovací obrazovky:
+
+> **Díky!**
+>
+> Přihlášení proběhlo úspěšně. Odteď vám neuniknou naše novinky, pozvánky ani dění na Třináctce.
+>
+> Mezitím nás sledujte také na sociálních sítích.
+
+Pod text vložte stejně velké ikony s odkazy na [Facebook](https://www.facebook.com/STANpraha13) a [Instagram](https://www.instagram.com/starostove.praha13/).
 
 ## Důležité názvy souborů
 
