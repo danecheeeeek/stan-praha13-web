@@ -197,11 +197,16 @@ h3 {
 
 .site-nav .nav-join {
   margin-left: 7px;
-  padding: 14px 22px 12px;
+  min-height: 47px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
   border-radius: 999px;
   background: var(--yellow);
   color: var(--pink);
   font-size: 18px;
+  line-height: 1;
   text-decoration: none;
 }
 
@@ -407,7 +412,18 @@ h3 {
 }
 
 .hero-slide-event {
-  background-color: var(--pink);
+  background: var(--pink);
+}
+
+.hero-event {
+  position: relative;
+  display: block;
+  background: var(--pink);
+}
+
+.hero-event-visual {
+  position: absolute;
+  inset: 0;
   background-image: linear-gradient(90deg, rgba(80, 0, 32, 0.18), rgba(80, 0, 32, 0) 58%), url("assets/images/prochazka-praha13.webp");
   background-position: center;
   background-size: cover;
@@ -600,6 +616,7 @@ h3 {
 /* Team page */
 .team-page-hero {
   padding: 0;
+  position: relative;
 }
 
 .team-hero-grid {
@@ -617,11 +634,12 @@ h3 {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  padding-bottom: 65px;
 }
 
 .team-hero-photo img {
   width: 100%;
-  height: 600px;
+  height: 545px;
   object-fit: contain;
   object-position: center bottom;
 }
@@ -648,6 +666,9 @@ h3 {
 }
 
 .team-page-main {
+  position: relative;
+  z-index: 2;
+  margin-top: -65px;
   padding-top: 0;
 }
 
@@ -1017,9 +1038,13 @@ h3 {
 
   .site-nav > a:not(.nav-join) {
     width: 100%;
-    padding: 10px 0;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
     color: var(--cream);
     font-size: clamp(29px, 7vw, 46px);
+    line-height: 1;
   }
 
   .site-nav > a[aria-current="page"] {
@@ -1037,9 +1062,12 @@ h3 {
   }
 
   .site-nav .nav-join {
-    margin: 4px 0 0;
-    padding: 15px 25px 13px;
-    font-size: 24px;
+    min-height: 58px;
+    align-self: flex-start;
+    margin: 14px 0 0;
+    padding: 16px 27px;
+    font-size: clamp(25px, 6vw, 34px);
+    line-height: 1;
   }
 
   .home-grid {
@@ -1056,7 +1084,7 @@ h3 {
   }
 
   .team-hero-photo img {
-    height: 550px;
+    height: 495px;
   }
 
   .candidate-profile {
@@ -1072,7 +1100,9 @@ h3 {
   :root {
     --page: calc(100% - 24px);
     --radius: 16px;
-    --hero-height: 900px;
+    --hero-media-height: clamp(340px, 93vw, 405px);
+    --hero-copy-height: 420px;
+    --hero-height: calc(var(--hero-media-height) + var(--hero-copy-height));
   }
 
   body {
@@ -1105,7 +1135,8 @@ h3 {
   }
 
   .site-nav {
-    padding: 145px 42px 36px;
+    gap: 5px;
+    padding: 138px 42px 36px;
   }
 
   .hero-shell {
@@ -1122,12 +1153,16 @@ h3 {
 
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: 450px 450px;
+    grid-template-rows: var(--hero-media-height) var(--hero-copy-height);
+    grid-template-areas:
+      "visual"
+      "copy";
   }
 
   .hero-copy {
+    grid-area: copy;
     justify-content: flex-start;
-    padding: 20px 54px 10px;
+    padding: 27px 54px 62px;
   }
 
   .hero-copy h1 {
@@ -1136,9 +1171,13 @@ h3 {
   }
 
   .hero-copy > p {
-    margin: 15px 0 17px;
+    margin: 16px 0 19px;
     font-size: 16px;
     line-height: 1.4;
+  }
+
+  .hero-visual {
+    grid-area: visual;
   }
 
   .actions {
@@ -1158,22 +1197,32 @@ h3 {
     height: 100%;
   }
 
-  .hero-slide-event {
+  .hero-event {
     display: grid;
-    grid-template-rows: 450px 450px;
-    background-position: center top;
-    background-size: auto 450px;
-    background-repeat: no-repeat;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--hero-media-height) var(--hero-copy-height);
+    grid-template-areas:
+      "visual"
+      "copy";
+  }
+
+  .hero-event-visual {
+    position: relative;
+    inset: auto;
+    background-image: url("assets/images/prochazka-praha13.webp");
+    background-position: center 36%;
+    background-size: cover;
   }
 
   .event-slide-copy {
     width: 100%;
     max-width: none;
-    height: 450px;
+    height: var(--hero-copy-height);
     position: relative;
     inset: auto;
-    grid-row: 2;
-    padding: 64px 54px 65px;
+    grid-area: copy;
+    display: block;
+    padding: 55px 54px 62px;
     border-radius: 0;
     background: var(--cream);
     box-shadow: none;
@@ -1198,7 +1247,7 @@ h3 {
   .slider-arrow {
     width: 46px;
     height: 46px;
-    top: 50%;
+    top: var(--hero-media-height);
     font-size: 22px;
   }
 
@@ -1297,7 +1346,7 @@ h3 {
   }
 
   .team-hero-copy {
-    padding: 32px 0 22px;
+    padding: 25px 0 20px;
   }
 
   .team-hero-copy h1 {
@@ -1311,18 +1360,19 @@ h3 {
 
   .team-hero-photo {
     height: auto;
+    padding-bottom: 0;
   }
 
   .team-hero-photo img {
-    width: 100%;
+    width: min(100%, 560px);
     height: auto;
     max-height: none;
     object-fit: contain;
   }
 
   .team-page-main {
-    margin-top: -1px;
-    padding-top: 28px;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .candidate-stack {
@@ -1441,96 +1491,5 @@ h3 {
   *::after {
     scroll-behavior: auto !important;
     transition: none !important;
-  }
-}
-/* Tým vyčnívající přes horní okraj bílého panelu */
-.team-page-hero {
-  position: relative;
-  overflow: visible;
-}
-
-.team-hero-grid {
-  position: relative;
-  overflow: visible;
-}
-
-/* Fotka musí být nad bílým panelem */
-.team-hero-photo {
-  position: relative;
-  z-index: 3;
-  overflow: visible;
-}
-
-.team-hero-photo img {
-  position: relative;
-  z-index: 3;
-}
-
-/* Text zůstane vždy bezpečně nad fotkou */
-.team-hero-copy {
-  position: relative;
-  z-index: 4;
-}
-
-/* Bílý panel leží pod skupinovou fotografií */
-.team-page-main {
-  position: relative;
-  z-index: 1;
-}
-
-/* První karta začne až pod přesahem fotografie */
-.team-page-main .page-panel {
-  padding-top: 78px;
-}
-
-/* Mobil */
-@media (max-width: 760px) {
-  .team-page-main {
-    margin-top: -70px;
-    padding-top: 28px;
-  }
-
-  .team-page-main .page-panel {
-    padding-top: 62px;
-  }
-}
-/* FINÁLNÍ OPRAVA:
-   skupinová fotka končí přesně na hraně bílého panelu */
-
-.team-page-hero {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-.team-hero-photo,
-.team-hero-photo img {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-.team-page-main {
-  position: relative !important;
-  z-index: 10 !important;
-  margin-top: -65px !important;
-  padding-top: 0 !important;
-}
-
-.team-page-main .page-panel {
-  position: relative !important;
-  z-index: 10 !important;
-  padding-top: clamp(28px, 4vw, 54px) !important;
-  background: #ffffff !important;
-}
-
-/* Mobil */
-@media (max-width: 760px) {
-  .team-page-main {
-    margin-top: -1px !important;
-    padding-top: 0 !important;
-  }
-
-  .team-page-main .page-panel {
-    margin-top: 0 !important;
-    padding-top: 18px !important;
   }
 }

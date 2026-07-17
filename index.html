@@ -1,12 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Starostové a nezávislí Praha 13. Nová energie pro Třináctku.">
   <title>Starostové Praha 13</title>
-  <link rel="stylesheet" href="styles.css?v=20260715-clean">
-  <script src="script.js?v=20260715-clean" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260716-final">
+  <script src="script.js?v=20260716-final" defer></script>
   <!-- MailerLite Universal -->
   <script>
       (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -30,7 +30,7 @@
         <a href="program.html">Náš program</a>
         <a href="aktuality.html">Aktuality</a>
         <a href="kontakt.html">Kontakt</a>
-        <div class="nav-socials" aria-label="Sociální sítě">
+        <div class="nav-socials" role="group" aria-label="Sociální sítě">
           <a class="nav-social" href="https://www.facebook.com/STANpraha13" target="_blank" rel="noopener" aria-label="Facebook Starostové Praha 13">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.4 8.4V6.5c0-.9.6-1.1 1-1.1H18V1.2L14.4 1C10.5 1 9.6 4 9.6 6v2.4H7v4.7h2.6V23h4.8v-9.9h3.2l.4-4.7h-3.6Z"/></svg>
           </a>
@@ -48,7 +48,7 @@
       <div class="container hero-slider" data-hero-slider aria-roledescription="carousel">
         <div class="hero-slides" aria-live="polite">
           <article class="hero-slide is-active" data-hero-slide aria-label="1 ze 2">
-            <div class="hero">
+            <div class="hero hero-home">
               <div class="hero-copy">
                 <h1>Nová energie pro Třináctku</h1>
                 <p>Jsme sousedé a odborníci různých generací. Chceme bezpečnou, živou a sebevědomou Prahu 13, která se rozvíjí s jasnou vizí a naslouchá lidem.</p>
@@ -57,24 +57,27 @@
                   <a class="button button-outline" href="tym.html">Seznamte se s týmem</a>
                 </div>
               </div>
-              <div class="hero-visual hero-team-visual" aria-label="Sedm hlavních kandidátů Starostů Praha 13">
+              <div class="hero-visual hero-team-visual">
                 <img class="hero-team-photo" src="assets/images/tym-praha13-s-tabuli.webp" alt="Tým Starostů Praha 13 s cedulí Praha 13">
               </div>
             </div>
           </article>
 
-          <article class="hero-slide hero-slide-event" data-hero-slide aria-label="2 ze 2" aria-hidden="true">
-            <div class="event-slide-copy">
-              <h2>Procházka Prahou 13</h2>
-              <p>20. července v 18:00 od metra Nové Butovice. Projděte s námi místa, kde se bude Praha 13 měnit.</p>
-              <a class="button" href="https://www.facebook.com/starostovenezavisli.praha/posts/p%C5%99ij%C4%8Fte-na-dal%C5%A1%C3%AD-komentovanou-proch%C3%A1zku-prahou-s-architektem-urbanistou-a-n%C3%A1m%C4%9Bst/1353368403558954/" target="_blank" rel="noopener">Událost na Facebooku</a>
+          <article class="hero-slide hero-slide-event" data-hero-slide aria-label="2 ze 2" aria-hidden="true" inert>
+            <div class="hero hero-event">
+              <div class="hero-visual hero-event-visual" role="img" aria-label="Pozvánka na procházku Prahou 13 a zahájení kampaně"></div>
+              <div class="hero-copy event-slide-copy">
+                <h2>Procházka Prahou 13</h2>
+                <p>20. července v 18:00 od metra Nové Butovice. Projděte s námi místa, kde se bude Praha 13 měnit.</p>
+                <a class="button" href="https://www.facebook.com/starostovenezavisli.praha/posts/p%C5%99ij%C4%8Fte-na-dal%C5%A1%C3%AD-komentovanou-proch%C3%A1zku-prahou-s-architektem-urbanistou-a-n%C3%A1m%C4%9Bst/1353368403558954/" target="_blank" rel="noopener">Událost na Facebooku</a>
+              </div>
             </div>
           </article>
         </div>
 
         <button class="slider-arrow slider-prev" type="button" data-slider-prev aria-label="Předchozí okno"><span aria-hidden="true">←</span></button>
         <button class="slider-arrow slider-next" type="button" data-slider-next aria-label="Další okno"><span aria-hidden="true">→</span></button>
-        <div class="slider-dots" aria-label="Výběr okna">
+        <div class="slider-dots" role="group" aria-label="Výběr okna">
           <button class="slider-dot is-active" type="button" data-slider-dot="0" aria-label="Zobrazit první okno" aria-current="true"></button>
           <button class="slider-dot" type="button" data-slider-dot="1" aria-label="Zobrazit pozvánku na procházku"></button>
         </div>
