@@ -1399,21 +1399,19 @@ h3 {
     margin-top: 18px;
     font-size: 17px;
   }
-
- .team-hero-photo {
+.team-hero-photo {
     height: auto;
-    padding-bottom: 54px; /* Tímto vynecháme přesně ten kus, který ukrajuje bílý rámeček */
+    padding-bottom: 54px;
     position: relative;
     z-index: 3;
-    /* Smaž ten transform i margin-bottom, tady nejsou potřeba a dělají neplechu */
   }
 
   .team-hero-photo img {
     width: min(100%, 560px);
-    height: auto;
-    max-height: 45vh; /* Zabrání tomu, aby fotka na menším mobilu vystřelila nahoru do textu */
+    height: 40vh;
+    min-height: 250px;
     object-fit: contain;
-    object-position: center bottom; /* Zaručí, že tým bude vždy "stát" přesně na té žluté linii */
+    object-position: center bottom;
   }
 
   .team-page-main {
@@ -1503,17 +1501,28 @@ h3 {
     gap: 8px;
   }
 }
-@media (max-width: 980px) {
-  .newsletter-trigger {
-    top: auto;
-    right: 12px;
-    bottom: calc(20px + env(safe-area-inset-bottom)); /* Posune to na mobilu trochu níž nad spodní okraj */
-    min-height: 40px; /* Výrazné zmenšení tlačítka */
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 14px; /* Menší text na mobilu */
-    transform: none;
-    box-shadow: 0 4px 12px rgba(67, 22, 42, 0.15);
+.newsletter-trigger {
+  position: fixed;
+  top: 58%;
+  right: 0;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 13px 22px 12px 24px;
+  border: 0;
+  border-radius: 999px 0 0 999px;
+  background: var(--yellow);
+  color: var(--pink);
+  box-shadow: 0 12px 30px rgba(67, 22, 42, 0.2);
+  font-family: "Oldschool Grotesk", Impact, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 160ms ease, color 160ms ease, padding-right 160ms ease;
+}
   }
 
   .newsletter-trigger:hover,
