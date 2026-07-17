@@ -1402,19 +1402,18 @@ h3 {
 
  .team-hero-photo {
     height: auto;
-    padding-bottom: 0;
+    padding-bottom: 54px; /* Tímto vynecháme přesně ten kus, který ukrajuje bílý rámeček */
     position: relative;
     z-index: 3;
-    transform: translateY(-20px); /* Toto vás zvedne přesně o tolik, kolik ukrajuje bílý rámeček */
-    margin-bottom: -20px; /* Toto vyrovná prostor pod fotkou, aby neuskočil zbytek webu */
+    /* Smaž ten transform i margin-bottom, tady nejsou potřeba a dělají neplechu */
   }
 
   .team-hero-photo img {
     width: min(100%, 560px);
     height: auto;
-    max-height: none;
+    max-height: 45vh; /* Zabrání tomu, aby fotka na menším mobilu vystřelila nahoru do textu */
     object-fit: contain;
-    object-position: center bottom; /* Zajistí, že se fotka opře o spodní hranu */
+    object-position: center bottom; /* Zaručí, že tým bude vždy "stát" přesně na té žluté linii */
   }
 
   .team-page-main {
