@@ -1405,8 +1405,8 @@ h3 {
     padding-bottom: 0;
     position: relative;
     z-index: 3;
-    transform: translateY(-54px); /* Toto vás zvedne přesně o tolik, kolik ukrajuje bílý rámeček */
-    margin-bottom: -54px; /* Toto vyrovná prostor pod fotkou, aby neuskočil zbytek webu */
+    transform: translateY(-20px); /* Toto vás zvedne přesně o tolik, kolik ukrajuje bílý rámeček */
+    margin-bottom: -20px; /* Toto vyrovná prostor pod fotkou, aby neuskočil zbytek webu */
   }
 
   .team-hero-photo img {
