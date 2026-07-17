@@ -1368,17 +1368,18 @@ h3 {
     z-index: 3;
   }
 
-  .team-hero-photo img {
-    width: min(100%, 560px);
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-  }
+.team-hero-photo img {
+  width: min(100%, 560px);
+  height: 400px;
+  max-height: none;
+  object-fit: cover;
+  object-position: center top;
+}
 
-  .team-page-main {
-    margin-top: -54px;
-    padding-top: 0;
-  }
+.team-page-main {
+  margin-top: -110px;
+  padding-top: 0;
+}
 
   .candidate-stack {
     gap: 20px;
