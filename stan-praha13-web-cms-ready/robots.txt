@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://stanpraha13.cz/sitemap.xml
