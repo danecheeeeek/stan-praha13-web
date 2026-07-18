@@ -1,0 +1,58 @@
+---
+layout: base.njk
+permalink: tym.html
+canonicalPath: /tym.html
+title: Náš tým | STAN Praha 13
+description: Tým Starostů a nezávislých pro Prahu 13.
+navKey: team
+---
+{% set visibleCandidates = candidates | visible %}
+<section class="page-hero">
+  <div class="container">
+    <h1>Seznamte se s naším týmem</h1>
+    <p>Zkušenosti, odbornost i mladá energie. Jsme lidé, kteří na Třináctce žijí a chtějí ji společně posunout dál.</p>
+  </div>
+</section>
+
+<section class="page-main team-page-main">
+  <div class="container page-panel">
+    <div class="candidate-stack">
+      {% for candidate in visibleCandidates %}
+      {% if candidate.featured %}
+      <article class="candidate-profile reveal">
+        <div class="candidate-portrait-zone candidate-color-{{ candidate.color }}">
+          <img class="candidate-cutout" src="{{ candidate.image }}" alt="{{ candidate.name }}">
+        </div>
+        <div class="candidate-copy">
+          <span class="candidate-number">{{ candidate.positionLabel }}</span>
+          <h3>{{ candidate.name }}</h3>
+          <p class="candidate-role">{{ candidate.role }}</p>
+          <p class="candidate-annotation">{{ candidate.annotation }}</p>
+        </div>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="compact-candidates-section">
+      <div class="section-title compact-section-title">
+        <h2>Kandidáti 8–35</h2>
+        <p>Finální kandidátní listinu zveřejníme na konci července.</p>
+      </div>
+      <div class="compact-candidates-grid" role="group" aria-label="Kandidáti 8 až 35">
+        {% for candidate in visibleCandidates %}
+        {% if not candidate.featured %}
+        <article class="compact-candidate">
+          <div class="compact-avatar">{{ candidate.number }}</div>
+          {% if candidate.name %}
+          <div class="compact-candidate-info"><strong>{{ candidate.name }}</strong>{% if candidate.role %}<span>{{ candidate.role }}</span>{% endif %}</div>
+          {% else %}
+          <div class="compact-candidate-placeholder" aria-hidden="true"></div>
+          {% endif %}
+        </article>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

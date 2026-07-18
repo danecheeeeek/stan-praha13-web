@@ -1,0 +1,72 @@
+[
+  {
+    "visible": true,
+    "style": "supporter",
+    "title": "Staňte se registrovaným příznivcem",
+    "text": "Zapojte se dlouhodobě do tvorby lepší Třináctky. Nezáleží na tom, kdo jste, odkud jste ani kolik času můžete věnovat – jsme tu pro všechny, kterým na Praze 13 záleží.",
+    "actions": [
+      {
+        "label": "Chci se přidat",
+        "url": "https://www.starostove.cz/pridejte-se-k-nam",
+        "external": true
+      }
+    ]
+  },
+  {
+    "visible": true,
+    "style": "volunteer",
+    "title": "Pomozte v kampani",
+    "text": "Pomozte s roznosem letáků, na akcích nebo při kontaktní kampani v ulicích. Napište nám a společně se domluvíme, co vám bude vyhovovat.",
+    "actions": [
+      {
+        "label": "Poslat e-mail",
+        "url": "mailto:vojta.ludvik@stan.cz?subject=Chci%20pomoci%20v%20kampani%20STAN%20Praha%2013",
+        "external": false
+      }
+    ]
+  },
+  {
+    "visible": true,
+    "style": "tip",
+    "title": "Pošlete nám podnět",
+    "text": "Znáte problém ve svém okolí nebo máte návrh, co na Třináctce zlepšit? Napište nám.",
+    "actions": [
+      {
+        "label": "Poslat podnět",
+        "url": "mailto:vojta.ludvik@stan.cz?subject=Podn%C4%9Bt%20pro%20Prahu%2013",
+        "external": false
+      }
+    ]
+  },
+  {
+    "visible": true,
+    "style": "social",
+    "title": "Sledujte a sdílejte",
+    "text": "Sdílením našich příspěvků svým známým nebo v místních skupinách pomůžete dostat místní témata k dalším sousedům.",
+    "actions": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/STANpraha13",
+        "external": true
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/starostove.praha13/",
+        "external": true
+      }
+    ]
+  },
+  {
+    "visible": true,
+    "style": "young",
+    "title": "Přidej se k Mladým Starostům",
+    "text": "Je ti mezi 16 a 36 lety? Přidej se k Mladým Starostům! Na Praze 13 máme vlastní místní organizaci, která se pravidelně schází a úzce spolupracuje se STAN. Pokud máš zájem, pošli přihlášku a nezapomeň zmínit, že jsi ze Třináctky.",
+    "actions": [
+      {
+        "label": "Poslat přihlášku",
+        "url": "https://www.mladistarostove.cz/registracni_formular/",
+        "external": true
+      }
+    ]
+  }
+]
