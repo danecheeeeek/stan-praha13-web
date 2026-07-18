@@ -1578,3 +1578,18 @@ h3 {
     transition: none !important;
   }
 }
+/* Stejná velikost nadpisů v mobilním carouselu */
+@media (max-width: 760px) {
+  .hero-copy h1,
+  .event-slide-copy h2 {
+    font-size: clamp(51px, 15.2vw, 62px);
+    line-height: 0.94;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero-copy h1,
+  .event-slide-copy h2 {
+    font-size: 49px;
+  }
+}
