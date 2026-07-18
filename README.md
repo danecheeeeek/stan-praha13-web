@@ -1,55 +1,59 @@
-# Starostové Praha 13
+# STAN Praha 13
 
-Statický responzivní web inspirovaný novým vizuálním stylem webu STAN Praha 5 a přizpůsobený pro Prahu 13.
+Web `stanpraha13.cz` běží jako statický web na Cloudflare Pages. Obsah se spravuje přes Pages CMS a při každém uložení se automaticky znovu sestaví z datových souborů.
 
-## Náhled
+## Správa obsahu bez kódování
 
-Web lze otevřít přímo přes `index.html` nebo spustit lokální server:
+1. Otevřete [Pages CMS](https://app.pagescms.org/).
+2. Přihlaste se přes GitHub.
+3. Vyberte repozitář `danecheeeeek/stan-praha13-web` a požadovanou větev.
+4. V levém menu vyberte carousel, aktuality, kandidáty, program nebo další sekci.
+5. Uložte změnu. Pages CMS vytvoří commit v GitHubu a Cloudflare Pages následně web automaticky nasadí.
+
+Konfigurace formulářů je v souboru `.pages.yml`. Fotografie nahrané přes administraci se ukládají do `assets/images`.
+
+## Obsah
+
+- `src/_data/carousel.json` – úvodní carousel;
+- `src/_data/news.json` – aktuality;
+- `src/_data/candidates.json` – kandidáti 1–35;
+- `src/_data/program.json` – programové priority;
+- `src/_data/homeCards.json` – karty na úvodní stránce;
+- `src/_data/contact.json` – kontaktní možnosti;
+- `src/_data/join.json` – možnosti zapojení;
+- `src/_data/site.json` – obecné údaje, sociální sítě a MailerLite.
+
+## Lokální spuštění
 
 ```bash
-python3 -m http.server 8080
+npm install
+npm run serve
 ```
 
-Poté otevřete `http://localhost:8080`.
+Produkční sestavení:
 
-## Stránky
+```bash
+npm run build
+```
 
-- `index.html` – úvodní carousel ovládaný tečkami, klávesnicí nebo tažením, představení týmu, programu a možností zapojení
-- `tym.html` – kandidátka: 7 velkých profilů s fotografiemi a kompaktní seznam kandidátů 8–35
-- `program.html` – šest průběžně rozšiřitelných programových priorit
-- `aktuality.html` – aktuality a události
-- `kontakt.html` – kontaktní údaje a sociální sítě
-- `zapojte-se.html` – pět možností zapojení včetně kampaně, podnětů a Mladých Starostů
+Hotový web se vytvoří ve složce `_site`.
 
-Texty, fotografie a odkazy lze před nasazením upravit přímo v HTML souborech.
+## Cloudflare Pages
 
-## Newsletter (MailerLite)
+Nastavení projektu:
 
-Na všech šesti stránkách je právě jednou vložený MailerLite Universal kód účtu `2428393` a pevná bublina **Odebírat novinky**. Bublina otevírá formulář `n7DU5l`. Na počítači je vpravo, na mobilu vpravo dole nad ovládáním prohlížeče.
+- Framework preset: `None`
+- Build command: `npm run build`
+- Build output directory: `_site`
+- Root directory: `/`
+- Production branch: `main`
 
-Pouze na úvodní stránce `index.html` se formulář otevře automaticky po 5 sekundách. V rámci jedné relace prohlížeče se automaticky zobrazí nejvýše jednou. Ruční otevření pomocí bubliny zůstává dostupné na každé stránce.
+Větev `cms-migration` slouží pro bezpečné náhledy. Do `main` se změny slučují až po kontrole preview nasazení.
 
-Vzhled vnitřku pop-upu se spravuje přímo v editoru MailerLite, nikoli v `styles.css`. Pro jednotný vzhled nastavte:
+## MailerLite
 
-- pozadí `#FFED00`, hlavní růžovou `#CE0F68` a krémovou `#FCF7E0`;
-- nadpis písmem Oldschool Grotesk a běžný text písmem Feature Text;
-- na počítači fotografii vlevo a formulář vpravo;
-- děkovací obrazovku ve stejných rozměrech, bez fotografie.
+Na všech stránkách je použit účet `2428393` a formulář `n7DU5l`. Automatické otevření po pěti sekundách zůstává pouze na úvodní stránce; ruční tlačítko je dostupné všude.
 
-Doporučený text děkovací obrazovky:
+## Původní HTML soubory
 
-> **Díky!**
->
-> Přihlášení proběhlo úspěšně. Odteď vám neuniknou naše novinky, pozvánky ani dění na Třináctce.
->
-> Mezitím nás sledujte také na sociálních sítích.
-
-Pod text vložte stejně velké ikony s odkazy na [Facebook](https://www.facebook.com/STANpraha13) a [Instagram](https://www.instagram.com/starostove.praha13/).
-
-## Důležité názvy souborů
-
-Cloudflare očekává v kořenové složce soubor `index.html`. Odkazy webu dále používají přesně názvy `tym.html`, `program.html`, `aktuality.html`, `kontakt.html` a `zapojte-se.html`. Hlavní vzhled musí zůstat v `styles.css` a chování menu a carouselu v `script.js`. Tyto soubory při nahrávání nepřejmenovávejte a nevytvářejte varianty typu `index-2.html`.
-
-## Jak později upravit carousel
-
-Obě okna jsou v `index.html` uvnitř prvku s atributem `data-hero-slider`. Jedno okno odpovídá jednomu prvku `article` s atributem `data-hero-slide`. Při přidání dalšího okna je potřeba přidat také jedno tlačítko `data-slider-dot` a navýšit pořadí v popisku `aria-label`. JavaScript už přepínání, šipky, tečky, automatický posun i tažení na mobilu obslouží.
+Kořenové soubory `index.html`, `tym.html`, `program.html`, `aktuality.html`, `kontakt.html` a `zapojte-se.html` jsou původní záloha. Cloudflare po přepnutí nastavení publikuje pouze sestavený obsah složky `_site`; běžný obsah se proto upravuje výhradně přes Pages CMS.

@@ -1,0 +1,32 @@
+[
+  {
+    "visible": true,
+    "title": "Náš tým",
+    "text": "Právník, lékař, pedagožka, ředitel sociálních služeb, ředitelka neziskové organizace, student práv i odborník na rozvoj města. Spojuje nás Praha 13 a chuť posunout ji dál.",
+    "image": "/assets/images/tym-praha13.webp",
+    "imageAlt": "Sedm hlavních kandidátů Starostů Praha 13",
+    "artClass": "art-team",
+    "buttonLabel": "Seznamte se s kandidáty",
+    "buttonUrl": "/tym.html"
+  },
+  {
+    "visible": true,
+    "title": "Náš program",
+    "text": "Jsme vaši sousedé a každý den vidíme, co na Třináctce funguje a co by šlo dělat jinak. Pokud dostaneme důvěru vrátit se na radnici, chceme přinést rozvoj s vizí, jasná pravidla a otevřenější komunikaci s lidmi.",
+    "image": "/assets/images/program.jpg",
+    "imageAlt": "Náš program pro Prahu 13",
+    "artClass": "",
+    "buttonLabel": "Poznejte naše priority",
+    "buttonUrl": "/program.html"
+  },
+  {
+    "visible": true,
+    "title": "Zapojte se",
+    "text": "Měňte Třináctku s námi! Přidejte se ke Starostům nebo se zapojte do našich akcí a přípravy programu.",
+    "image": "/assets/images/zapojte-se.jpg",
+    "imageAlt": "Zapojte se do Starostů Praha 13",
+    "artClass": "",
+    "buttonLabel": "Chci se zapojit",
+    "buttonUrl": "/zapojte-se.html"
+  }
+]
