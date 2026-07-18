@@ -1,0 +1,33 @@
+---
+layout: base.njk
+permalink: zapojte-se.html
+canonicalPath: /zapojte-se.html
+title: Zapojte se | STAN Praha 13
+description: Zapojte se do kampaně Starostů na Praze 13.
+navKey: join
+---
+<section class="page-hero">
+  <div class="container">
+    <h1>Buďte u toho s námi</h1>
+    <p>Naše členská základna se postupně rozšiřuje, protože lidem záleží na lepší Třináctce. Ať už se rozhodnete stát registrovaným příznivcem STAN, pomůžete nám v kampani, nebo pošlete podnět k našemu programu, budeme rádi za každou pomoc. Moc se na vás těšíme!</p>
+  </div>
+</section>
+
+<section class="page-main">
+  <div class="container page-panel">
+    <div class="section-title"><h2>Zapojte se po svém</h2><p>Vyberte si možnost, která vám nejlépe sedí. Budeme rádi za každý nápad, sdílení i hodinu pomoci.</p></div>
+    <div class="join-grid">
+      {% for item in join | visible %}
+      <article class="join-card join-card-{{ item.style }} reveal">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.text }}</p>
+        <div class="join-actions">
+          {% for action in item.actions %}
+          <a class="button" href="{{ action.url }}"{% if action.external %} target="_blank" rel="noopener"{% endif %}>{{ action.label }}</a>
+          {% endfor %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

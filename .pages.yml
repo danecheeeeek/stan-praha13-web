@@ -1,0 +1,368 @@
+media:
+  input: assets/images
+  output: /assets/images
+  rename: safe
+  extensions: [png, jpg, jpeg, webp, svg]
+
+content:
+  - name: carousel
+    label: Carousel na úvodní stránce
+    type: file
+    path: src/_data/carousel.json
+    format: json
+    list: true
+    fields:
+      - name: visible
+        label: Zobrazit slide
+        type: boolean
+      - name: layout
+        label: Typ slidu
+        type: select
+        required: true
+        options:
+          values:
+            - name: home
+              label: Hlavní slide s týmem
+            - name: event
+              label: Událost nebo pozvánka
+      - name: title
+        label: Nadpis
+        type: string
+        required: true
+      - name: text
+        label: Text
+        type: text
+        required: true
+      - name: image
+        label: Obrázek
+        type: image
+        required: true
+      - name: imageAlt
+        label: Popis obrázku pro čtečky
+        type: string
+        required: true
+      - name: actions
+        label: Tlačítka
+        type: object
+        list:
+          max: 2
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Text tlačítka
+            type: string
+            required: true
+          - name: url
+            label: Odkaz
+            type: string
+            required: true
+          - name: style
+            label: Vzhled tlačítka
+            type: select
+            options:
+              values:
+                - name: primary
+                  label: Plné růžové
+                - name: outline
+                  label: Obrysové
+          - name: external
+            label: Otevřít v nové kartě
+            type: boolean
+
+  - name: news
+    label: Aktuality
+    type: file
+    path: src/_data/news.json
+    format: json
+    list: true
+    fields:
+      - name: visible
+        label: Zobrazit aktualitu
+        type: boolean
+      - name: dateLabel
+        label: Datum nebo štítek
+        type: string
+        required: true
+        description: Například „20. 7. 2026 od 18:00“ nebo „Připravujeme“.
+      - name: title
+        label: Nadpis
+        type: string
+        required: true
+      - name: text
+        label: Text aktuality
+        type: text
+        required: true
+      - name: buttonLabel
+        label: Text tlačítka
+        type: string
+      - name: buttonUrl
+        label: Odkaz tlačítka
+        type: string
+      - name: external
+        label: Otevřít v nové kartě
+        type: boolean
+
+  - name: candidates
+    label: Kandidáti
+    type: file
+    path: src/_data/candidates.json
+    format: json
+    list: true
+    fields:
+      - name: visible
+        label: Zobrazit kandidáta
+        type: boolean
+      - name: featured
+        label: Velký profil
+        type: boolean
+        description: Zapněte pro prvních sedm kandidátů s velkou fotografií a medailonkem.
+      - name: number
+        label: Číslo na kandidátce
+        type: number
+        required: true
+      - name: positionLabel
+        label: Štítek pozice
+        type: string
+        required: true
+      - name: name
+        label: Jméno
+        type: string
+      - name: role
+        label: Povolání nebo role
+        type: text
+      - name: annotation
+        label: Medailonek
+        type: text
+      - name: image
+        label: Fotografie
+        type: image
+      - name: color
+        label: Barva pozadí fotografie
+        type: select
+        options:
+          values:
+            - name: green
+              label: Zelená
+            - name: pink
+              label: Růžová
+            - name: purple
+              label: Fialová
+            - name: yellow
+              label: Žlutá
+
+  - name: program
+    label: Programové priority
+    type: file
+    path: src/_data/program.json
+    format: json
+    list: true
+    fields:
+      - name: visible
+        label: Zobrazit prioritu
+        type: boolean
+      - name: title
+        label: Nadpis priority
+        type: string
+        required: true
+      - name: text
+        label: Popis priority
+        type: text
+        required: true
+
+  - name: homepage
+    label: Karty na úvodní stránce
+    type: file
+    path: src/_data/homeCards.json
+    format: json
+    list: true
+    fields:
+      - name: visible
+        label: Zobrazit kartu
+        type: boolean
+      - name: title
+        label: Nadpis
+        type: string
+        required: true
+      - name: text
+        label: Text
+        type: text
+        required: true
+      - name: image
+        label: Obrázek
+        type: image
+        required: true
+      - name: imageAlt
+        label: Popis obrázku
+        type: string
+        required: true
+      - name: artClass
+        label: Technická třída obrázku
+        type: string
+        description: U týmové fotografie ponechte „art-team“, jinak prázdné.
+      - name: buttonLabel
+        label: Text tlačítka
+        type: string
+        required: true
+      - name: buttonUrl
+        label: Odkaz tlačítka
+        type: string
+        required: true
+
+  - name: contact
+    label: Kontaktní možnosti
+    type: file
+    path: src/_data/contact.json
+    format: json
+    list: true
+    fields:
+      - name: visible
+        label: Zobrazit kontakt
+        type: boolean
+      - name: label
+        label: Malý štítek
+        type: string
+        required: true
+      - name: title
+        label: Nadpis
+        type: string
+        required: true
+      - name: text
+        label: Text
+        type: text
+        required: true
+      - name: buttonLabel
+        label: Text tlačítka
+        type: string
+        required: true
+      - name: buttonUrl
+        label: Odkaz tlačítka
+        type: string
+        required: true
+      - name: external
+        label: Otevřít v nové kartě
+        type: boolean
+
+  - name: join
+    label: Možnosti zapojení
+    type: file
+    path: src/_data/join.json
+    format: json
+    list: true
+    fields:
+      - name: visible
+        label: Zobrazit možnost
+        type: boolean
+      - name: style
+        label: Barva karty
+        type: select
+        required: true
+        options:
+          values:
+            - name: supporter
+              label: Registrovaný příznivec
+            - name: volunteer
+              label: Dobrovolnictví
+            - name: tip
+              label: Podnět
+            - name: social
+              label: Sociální sítě
+            - name: young
+              label: Mladí Starostové
+      - name: title
+        label: Nadpis
+        type: string
+        required: true
+      - name: text
+        label: Text
+        type: text
+        required: true
+      - name: actions
+        label: Tlačítka
+        type: object
+        list:
+          max: 2
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Text tlačítka
+            type: string
+            required: true
+          - name: url
+            label: Odkaz
+            type: string
+            required: true
+          - name: external
+            label: Otevřít v nové kartě
+            type: boolean
+
+  - name: site
+    label: Obecné nastavení webu
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - name: name
+        label: Název webu
+        type: string
+        required: true
+      - name: baseUrl
+        label: Hlavní adresa webu
+        type: string
+        required: true
+      - name: defaultTitle
+        label: Výchozí titulek pro Google
+        type: string
+        required: true
+      - name: defaultDescription
+        label: Výchozí popis pro Google
+        type: text
+        required: true
+      - name: logo
+        label: Logo
+        type: image
+        required: true
+      - name: logoAlt
+        label: Textový popis loga
+        type: string
+        required: true
+      - name: socialImage
+        label: Náhledový obrázek pro sociální sítě
+        type: image
+        required: true
+      - name: facebook
+        label: Facebook
+        type: string
+        required: true
+      - name: instagram
+        label: Instagram
+        type: string
+        required: true
+      - name: stan
+        label: Hlavní web STAN
+        type: string
+        required: true
+      - name: footerText
+        label: Text v zápatí
+        type: text
+        required: true
+      - name: copyright
+        label: Copyright
+        type: string
+        required: true
+      - name: cookieText
+        label: Informace o cookies
+        type: string
+        required: true
+      - name: mailerLiteAccount
+        label: MailerLite účet
+        type: string
+        required: true
+      - name: mailerLiteForm
+        label: MailerLite formulář
+        type: string
+        required: true
+        

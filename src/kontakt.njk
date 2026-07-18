@@ -1,0 +1,30 @@
+---
+layout: base.njk
+permalink: kontakt.html
+canonicalPath: /kontakt.html
+title: Kontakt | STAN Praha 13
+description: Kontakt na Starosty a nezávislé Praha 13.
+navKey: contact
+---
+<section class="page-hero">
+  <div class="container">
+    <h1>Kontakt</h1>
+    <p>Máte podnět, otázku nebo se chcete zapojit? Napište nám nebo nás sledujte na sociálních sítích.</p>
+  </div>
+</section>
+
+<section class="page-main">
+  <div class="container page-panel">
+    <div class="section-title"><h2>Ozvěte se nám</h2><p>Vyberte si způsob, který vám nejvíce vyhovuje.</p></div>
+    <div class="contact-grid">
+      {% for item in contact | visible %}
+      <article class="contact-card reveal">
+        <span class="contact-label">{{ item.label }}</span>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.text }}</p>
+        <a class="button" href="{{ item.buttonUrl }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.buttonLabel }}</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

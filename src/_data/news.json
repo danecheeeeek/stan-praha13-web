@@ -1,0 +1,29 @@
+[
+  {
+    "visible": true,
+    "dateLabel": "20. 7. 2026 od 18:00",
+    "title": "Architektonická procházka Prahou 13 a zahájení kampaně",
+    "text": "S Petrem Hlaváčkem a Vojtěchem Ludvíkem se vydáme od Nových Butovic přes Sluneční náměstí až do Centrálního parku. Procházkou zároveň zahájíme naši kampaň pro komunální volby 2026.",
+    "buttonLabel": "Podrobnosti na Facebooku",
+    "buttonUrl": "https://www.facebook.com/starostovenezavisli.praha/posts/p%C5%99ij%C4%8Fte-na-dal%C5%A1%C3%AD-komentovanou-proch%C3%A1zku-prahou-s-architektem-urbanistou-a-n%C3%A1m%C4%9Bst/1353368403558954/",
+    "external": true
+  },
+  {
+    "visible": true,
+    "dateLabel": "Připravujeme",
+    "title": "Další akce na Třináctce",
+    "text": "Procházka bude první z dalších setkání, která chystáme. Sledujte nás, ať vám neuniknou nové termíny ani místa.",
+    "buttonLabel": "Sledovat na Facebooku",
+    "buttonUrl": "https://www.facebook.com/STANpraha13",
+    "external": true
+  },
+  {
+    "visible": true,
+    "dateLabel": "Brzy v ulicích",
+    "title": "Potkáme se v kontaktní kampani",
+    "text": "Budeme chodit za vámi do ulic napříč Prahou 13. Sledujte naše sociální sítě a zjistěte, kdy budeme právě ve vašem okolí.",
+    "buttonLabel": "Sledovat na Instagramu",
+    "buttonUrl": "https://www.instagram.com/starostove.praha13/",
+    "external": true
+  }
+]
