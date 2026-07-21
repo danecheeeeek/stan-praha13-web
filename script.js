@@ -6,19 +6,25 @@
 
   const loadNews = () => {
     if (!newsRequest) {
-      newsRequest = fetch(NEWS_DATA_URL, { cache: "no-store" }).then((response) => {
-        if (!response.ok) throw new Error(`Aktuality se nepodařilo načíst (${response.status}).`);
-        return response.json();
-      }).then((items) => Array.isArray(items) ? items : []);
+      newsRequest = fetch(NEWS_DATA_URL, { cache: "no-store" })
+        .then((response) => {
+          if (!response.ok)
+            throw new Error(
+              `Aktuality se nepodařilo načíst (${response.status}).`,
+            );
+          return response.json();
+        })
+        .then((items) => (Array.isArray(items) ? items : []));
     }
     return newsRequest;
   };
 
-  const cleanSlug = (value) => String(value || "")
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9-]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+  const cleanSlug = (value) =>
+    String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9-]+/g, "-")
+      .replace(/^-+|-+$/g, "");
 
   const addText = (parent, tagName, className, text) => {
     const element = document.createElement(tagName);
@@ -82,9 +88,12 @@
       detailPanel.id = detailId;
       detailPanel.hidden = true;
 
-      detailsText.split(/\n\s*\n/).filter(Boolean).forEach((paragraph) => {
-        addText(detailPanel, "p", "", paragraph.replace(/\s*\n\s*/g, " "));
-      });
+      detailsText
+        .split(/\n\s*\n/)
+        .filter(Boolean)
+        .forEach((paragraph) => {
+          addText(detailPanel, "p", "", paragraph.replace(/\s*\n\s*/g, " "));
+        });
 
       if (gallery.length) {
         const galleryElement = document.createElement("div");
@@ -94,7 +103,10 @@
           link.href = source;
           link.target = "_blank";
           link.rel = "noopener";
-          link.setAttribute("aria-label", `Otevřít fotografii ${galleryIndex + 1} v plné velikosti`);
+          link.setAttribute(
+            "aria-label",
+            `Otevřít fotografii ${galleryIndex + 1} v plné velikosti`,
+          );
           const image = document.createElement("img");
           image.src = source;
           image.alt = `${item.title || "Aktualita"} – fotografie ${galleryIndex + 1}`;
@@ -109,7 +121,9 @@
       detailButton.addEventListener("click", () => {
         const willOpen = detailButton.getAttribute("aria-expanded") !== "true";
         detailButton.setAttribute("aria-expanded", String(willOpen));
-        detailButton.textContent = willOpen ? "Skrýt podrobnosti" : "Zobrazit podrobnosti";
+        detailButton.textContent = willOpen
+          ? "Skrýt podrobnosti"
+          : "Zobrazit podrobnosti";
         detailPanel.hidden = !willOpen;
         article.classList.toggle("is-expanded", willOpen);
       });
@@ -142,16 +156,21 @@
     const article = document.getElementById(slug);
     if (!article?.matches("[data-news-article]")) return;
 
-    document.querySelectorAll("[data-news-article].is-targeted").forEach((item) => {
-      item.classList.remove("is-targeted");
-    });
+    document
+      .querySelectorAll("[data-news-article].is-targeted")
+      .forEach((item) => {
+        item.classList.remove("is-targeted");
+      });
     article.classList.add("is-targeted");
 
     const toggle = article.querySelector(".news-detail-toggle");
     if (toggle?.getAttribute("aria-expanded") !== "true") toggle.click();
 
     window.setTimeout(() => {
-      article.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+      article.scrollIntoView({
+        behavior: smooth ? "smooth" : "auto",
+        block: "start",
+      });
     }, 60);
   };
 
@@ -161,11 +180,22 @@
     try {
       const items = await loadNews();
       list.replaceChildren(...items.map(createNewsArticle));
-      if (!items.length) addText(list, "p", "news-error", "Zatím jsme nezveřejnili žádnou aktualitu.");
+      if (!items.length)
+        addText(
+          list,
+          "p",
+          "news-error",
+          "Zatím jsme nezveřejnili žádnou aktualitu.",
+        );
       openNewsFromHash(false);
     } catch (error) {
       list.replaceChildren();
-      addText(list, "p", "news-error", "Aktuality se teď nepodařilo načíst. Zkuste prosím stránku obnovit.");
+      addText(
+        list,
+        "p",
+        "news-error",
+        "Aktuality se teď nepodařilo načíst. Zkuste prosím stránku obnovit.",
+      );
       console.error(error);
     }
   };
@@ -233,12 +263,17 @@
     menuButton.addEventListener("click", () => {
       const willOpen = menuButton.getAttribute("aria-expanded") !== "true";
       menuButton.setAttribute("aria-expanded", String(willOpen));
-      menuButton.setAttribute("aria-label", willOpen ? "Zavřít menu" : "Otevřít menu");
+      menuButton.setAttribute(
+        "aria-label",
+        willOpen ? "Zavřít menu" : "Otevřít menu",
+      );
       navigation.classList.toggle("open", willOpen);
       document.body.classList.toggle("menu-open", willOpen);
     });
 
-    navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    navigation
+      .querySelectorAll("a")
+      .forEach((link) => link.addEventListener("click", closeMenu));
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeMenu();
     });
@@ -262,15 +297,17 @@
       });
 
       if (dotsContainer) {
-        dotsContainer.replaceChildren(...slides.map((slide, index) => {
-          const dot = document.createElement("button");
-          dot.className = `slider-dot${index === 0 ? " is-active" : ""}`;
-          dot.type = "button";
-          dot.dataset.sliderDot = String(index);
-          dot.setAttribute("aria-label", `Zobrazit okno ${index + 1}`);
-          if (index === 0) dot.setAttribute("aria-current", "true");
-          return dot;
-        }));
+        dotsContainer.replaceChildren(
+          ...slides.map((slide, index) => {
+            const dot = document.createElement("button");
+            dot.className = `slider-dot${index === 0 ? " is-active" : ""}`;
+            dot.type = "button";
+            dot.dataset.sliderDot = String(index);
+            dot.setAttribute("aria-label", `Zobrazit okno ${index + 1}`);
+            if (index === 0) dot.setAttribute("aria-current", "true");
+            return dot;
+          }),
+        );
       }
 
       const dots = Array.from(slider.querySelectorAll("[data-slider-dot]"));
@@ -281,7 +318,10 @@
         return;
       }
 
-      let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+      let activeIndex = Math.max(
+        0,
+        slides.findIndex((slide) => slide.classList.contains("is-active")),
+      );
       let autoplayTimer = null;
       let touchStartX = null;
       const autoplayDelay = 8000;
@@ -308,13 +348,34 @@
       };
       const startAutoplay = () => {
         stopAutoplay();
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        autoplayTimer = window.setInterval(() => showSlide(activeIndex + 1), autoplayDelay);
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+          return;
+        if (
+          window.matchMedia(
+            "(max-width: 760px), (hover: none) and (pointer: coarse)",
+          ).matches
+        )
+          return;
+        autoplayTimer = window.setInterval(
+          () => showSlide(activeIndex + 1),
+          autoplayDelay,
+        );
       };
 
-      previousButton?.addEventListener("click", () => { showSlide(activeIndex - 1); startAutoplay(); });
-      nextButton?.addEventListener("click", () => { showSlide(activeIndex + 1); startAutoplay(); });
-      dots.forEach((dot, index) => dot.addEventListener("click", () => { showSlide(index); startAutoplay(); }));
+      previousButton?.addEventListener("click", () => {
+        showSlide(activeIndex - 1);
+        startAutoplay();
+      });
+      nextButton?.addEventListener("click", () => {
+        showSlide(activeIndex + 1);
+        startAutoplay();
+      });
+      dots.forEach((dot, index) =>
+        dot.addEventListener("click", () => {
+          showSlide(index);
+          startAutoplay();
+        }),
+      );
 
       if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
         slider.addEventListener("pointerenter", stopAutoplay);
@@ -324,18 +385,27 @@
       slider.addEventListener("focusout", (event) => {
         if (!slider.contains(event.relatedTarget)) startAutoplay();
       });
-      slider.addEventListener("touchstart", (event) => {
-        touchStartX = event.changedTouches[0]?.clientX ?? null;
-        stopAutoplay();
-      }, { passive: true });
-      slider.addEventListener("touchend", (event) => {
-        if (touchStartX === null) return;
-        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
-        const distance = touchEndX - touchStartX;
-        touchStartX = null;
-        if (Math.abs(distance) > 55) showSlide(activeIndex + (distance < 0 ? 1 : -1));
-        startAutoplay();
-      }, { passive: true });
+      slider.addEventListener(
+        "touchstart",
+        (event) => {
+          touchStartX = event.changedTouches[0]?.clientX ?? null;
+          stopAutoplay();
+        },
+        { passive: true },
+      );
+      slider.addEventListener(
+        "touchend",
+        (event) => {
+          if (touchStartX === null) return;
+          const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+          const distance = touchEndX - touchStartX;
+          touchStartX = null;
+          if (Math.abs(distance) > 55)
+            showSlide(activeIndex + (distance < 0 ? 1 : -1));
+          startAutoplay();
+        },
+        { passive: true },
+      );
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) stopAutoplay();
         else startAutoplay();
@@ -349,17 +419,36 @@
   const newsletterStorageKey = "stan-praha13-newsletter-auto-shown";
   const newsletterTriggers = document.querySelectorAll(".newsletter-trigger");
   const rememberNewsletterShown = () => {
-    try { window.sessionStorage.setItem(newsletterStorageKey, "1"); } catch { /* no-op */ }
+    try {
+      window.sessionStorage.setItem(newsletterStorageKey, "1");
+    } catch {
+      /* no-op */
+    }
   };
-  newsletterTriggers.forEach((trigger) => trigger.addEventListener("click", rememberNewsletterShown));
+  newsletterTriggers.forEach((trigger) =>
+    trigger.addEventListener("click", rememberNewsletterShown),
+  );
 
   if (document.body.hasAttribute("data-newsletter-auto")) {
     let newsletterAlreadyShown = false;
-    try { newsletterAlreadyShown = window.sessionStorage.getItem(newsletterStorageKey) === "1"; } catch { /* no-op */ }
+    try {
+      newsletterAlreadyShown =
+        window.sessionStorage.getItem(newsletterStorageKey) === "1";
+    } catch {
+      /* no-op */
+    }
     if (!newsletterAlreadyShown) {
       const showNewsletter = () => {
-        try { if (window.sessionStorage.getItem(newsletterStorageKey) === "1") return; } catch { /* no-op */ }
-        if (document.body.classList.contains("menu-open") || typeof window.ml !== "function") {
+        try {
+          if (window.sessionStorage.getItem(newsletterStorageKey) === "1")
+            return;
+        } catch {
+          /* no-op */
+        }
+        if (
+          document.body.classList.contains("menu-open") ||
+          typeof window.ml !== "function"
+        ) {
           window.setTimeout(showNewsletter, 750);
           return;
         }
