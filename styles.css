@@ -424,10 +424,14 @@ h3 {
 .hero-event-visual {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(90deg, rgba(80, 0, 32, 0.18), rgba(80, 0, 32, 0) 58%), var(--hero-image, url("assets/images/prochazka-praha13.webp"));
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: var(--pink);
+}
+
+.hero-event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .event-slide-copy {
@@ -617,8 +621,11 @@ h3 {
 
 /* Team page */
 .team-page-hero {
+  --team-panel-overlap: 65px;
   padding: 0;
   position: relative;
+  z-index: 1;
+  isolation: isolate;
 }
 
 .team-hero-grid {
@@ -633,15 +640,23 @@ h3 {
 .team-hero-photo {
   grid-area: photo;
   min-width: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 65px;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 65px;
+  place-items: end center;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  line-height: 0;
 }
 
 .team-hero-photo img {
-  width: 100%;
+  grid-row: 1;
+  display: block;
+  width: min(100%, 620px);
   height: 545px;
+  margin: 0;
   object-fit: contain;
   object-position: center bottom;
 }
@@ -669,9 +684,15 @@ h3 {
 
 .team-page-main {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   margin-top: -65px;
   padding-top: 0;
+}
+
+.team-page-main .page-panel {
+  position: relative;
+  z-index: 20;
+  background: #fff;
 }
 
 .candidate-stack {
@@ -783,25 +804,6 @@ h3 {
   font-size: 22px;
 }
 
-.compact-candidate-info {
-  min-width: 0;
-  display: grid;
-  gap: 3px;
-}
-
-.compact-candidate-info strong {
-  color: var(--pink);
-  font-family: "Oldschool Grotesk", Impact, sans-serif;
-  font-size: 22px;
-  line-height: 1;
-}
-
-.compact-candidate-info span {
-  color: #57514c;
-  font-size: 15px;
-  line-height: 1.3;
-}
-
 /* Program */
 .program-grid {
   display: grid;
@@ -883,6 +885,147 @@ h3 {
 .contact-card .button {
   margin-top: auto;
   align-self: flex-start;
+}
+
+/* Aktuality: fotografie vlevo, obsah vpravo; podrobnosti se rozbalují uvnitř řádku. */
+.news-list {
+  display: grid;
+  gap: 24px;
+}
+
+.news-loading,
+.news-error {
+  margin: 0;
+  padding: 28px;
+  border-radius: 18px;
+  background: var(--cream);
+  font-size: 18px;
+}
+
+.news-row {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.35fr);
+  overflow: hidden;
+  scroll-margin-top: 130px;
+  border-radius: 22px;
+  background: var(--cream);
+  box-shadow: 0 14px 38px rgba(67, 22, 42, 0.08);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.news-row:nth-child(3n + 2) {
+  background: var(--purple);
+}
+
+.news-row:nth-child(3n) {
+  background: var(--light-pink);
+}
+
+.news-row.is-targeted {
+  box-shadow: 0 0 0 5px var(--yellow), 0 18px 42px rgba(67, 22, 42, 0.18);
+}
+
+.news-row__media {
+  min-width: 0;
+  min-height: 320px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--green);
+}
+
+.news-row__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.news-row__content {
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(34px, 4vw, 58px);
+}
+
+.news-row--no-image {
+  grid-template-columns: 1fr;
+}
+
+.news-row--no-image .news-row__content {
+  min-height: 270px;
+}
+
+.news-row h2 {
+  max-width: 900px;
+  margin: 22px 0 15px;
+  color: var(--pink);
+  font-size: clamp(43px, 4.2vw, 66px);
+}
+
+.news-summary {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(17px, 1.45vw, 21px);
+}
+
+.news-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.news-detail-toggle {
+  cursor: pointer;
+}
+
+.news-details {
+  max-width: 980px;
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 2px solid rgba(206, 15, 104, 0.2);
+}
+
+.news-details[hidden] {
+  display: none;
+}
+
+.news-details p {
+  margin: 0 0 15px;
+  font-size: 17px;
+}
+
+.news-details p:last-child {
+  margin-bottom: 0;
+}
+
+.news-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.news-gallery a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.news-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+.news-gallery a:hover img {
+  transform: scale(1.035);
 }
 
 /* Join page */
@@ -994,32 +1137,35 @@ h3 {
 /* MailerLite newsletter trigger */
 .newsletter-trigger {
   position: fixed;
-  top: 58%;
-  right: 0;
+  top: auto;
+  right: 12px;
+  bottom: 10px;
   z-index: 45;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 13px 22px 12px 24px;
+  max-width: calc(100vw - 28px);
+  min-height: 36px;
+  padding: 8px 13px 7px;
   border: 0;
-  border-radius: 999px 0 0 999px;
+  border-radius: 999px;
   background: var(--yellow);
   color: var(--pink);
   box-shadow: 0 12px 30px rgba(67, 22, 42, 0.2);
   font-family: "Oldschool Grotesk", Impact, sans-serif;
-  font-size: 18px;
+  font-size: 13px;
   line-height: 1;
+  white-space: nowrap;
   cursor: pointer;
-  transform: translateY(-50%);
-  transition: background-color 160ms ease, color 160ms ease, padding-right 160ms ease;
+  transform: none;
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
 }
 
 .newsletter-trigger:hover,
 .newsletter-trigger:focus-visible {
-  padding-right: 28px;
   background: var(--cream);
   color: var(--pink);
+  box-shadow: 0 14px 34px rgba(67, 22, 42, 0.26);
 }
 
 .newsletter-trigger:focus-visible {
@@ -1269,9 +1415,11 @@ h3 {
   .hero-event-visual {
     position: relative;
     inset: auto;
-    background-image: var(--hero-image, url("assets/images/prochazka-praha13.webp"));
-    background-position: center 36%;
-    background-size: cover;
+    background: var(--pink);
+  }
+
+  .hero-event-image {
+    object-position: center 36%;
   }
 
   .event-slide-copy {
@@ -1363,6 +1511,62 @@ h3 {
     font-size: 16px;
   }
 
+  .news-list {
+    gap: 18px;
+  }
+
+  .news-row,
+  .news-row--no-image {
+    grid-template-columns: 1fr;
+    scroll-margin-top: 120px;
+    border-radius: 18px;
+  }
+
+  .news-row__media {
+    min-height: 0;
+    height: clamp(230px, 64vw, 360px);
+  }
+
+  .news-row__content,
+  .news-row--no-image .news-row__content {
+    min-height: 0;
+    justify-content: flex-start;
+    padding: 27px 25px 30px;
+  }
+
+  .news-row h2 {
+    margin: 18px 0 12px;
+    font-size: clamp(36px, 10.5vw, 46px);
+  }
+
+  .news-summary {
+    font-size: 16px;
+  }
+
+  .news-actions {
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 22px;
+  }
+
+  .news-actions .button {
+    width: 100%;
+  }
+
+  .news-details {
+    margin-top: 24px;
+    padding-top: 21px;
+  }
+
+  .news-details p {
+    font-size: 16px;
+  }
+
+  .news-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
   .page-hero {
     padding: 36px 0 92px;
   }
@@ -1395,6 +1599,7 @@ h3 {
   }
 
   .team-page-hero {
+    --team-panel-overlap: 54px;
     padding: 0;
   }
 
@@ -1420,19 +1625,29 @@ h3 {
 
   .team-hero-photo {
     height: auto;
-    padding-bottom: 0;
+    grid-template-rows: auto 54px;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
     position: relative;
-    z-index: 3;
+    z-index: 1;
+    line-height: 0;
   }
 
   .team-hero-photo img {
-    width: min(100%, 560px);
+    grid-row: 1;
+    display: block;
+    width: min(82vw, 410px);
     height: auto;
     max-height: none;
+    margin: 0;
     object-fit: contain;
+    object-position: center bottom;
   }
 
   .team-page-main {
+    position: relative;
+    z-index: 4;
     margin-top: -54px;
     padding-top: 0;
   }
@@ -1523,18 +1738,19 @@ h3 {
 @media (max-width: 980px) {
   .newsletter-trigger {
     top: auto;
-    right: 12px;
-    bottom: calc(88px + env(safe-area-inset-bottom));
-    min-height: 48px;
-    padding: 12px 18px 11px;
+    right: 8px;
+    bottom: calc(8px + env(safe-area-inset-bottom));
+    max-width: calc(100vw - 16px);
+    min-height: 34px;
+    padding: 7px 11px 6px;
     border-radius: 999px;
-    font-size: 16px;
+    font-size: 12px;
     transform: none;
   }
 
   .newsletter-trigger:hover,
   .newsletter-trigger:focus-visible {
-    padding-right: 18px;
+    padding-right: 11px;
   }
 
   body.menu-open .newsletter-trigger {
@@ -1576,41 +1792,5 @@ h3 {
   *::after {
     scroll-behavior: auto !important;
     transition: none !important;
-  }
-}
-/* Stejná velikost nadpisů v mobilním carouselu */
-@media (max-width: 760px) {
-  .hero-copy h1,
-  .event-slide-copy h2 {
-    font-size: clamp(51px, 15.2vw, 62px);
-    line-height: 0.94;
-  }
-}
-
-@media (max-width: 370px) {
-  .hero-copy h1,
-  .event-slide-copy h2 {
-    font-size: 49px;
-  }
-}
-/* Sjednocení nadpisů carouselu – velikost i výška */
-@media (max-width: 760px) {
-  .hero-copy,
-  .event-slide-copy {
-    padding-top: 27px;
-  }
-
-  .hero-copy h1,
-  .event-slide-copy h2 {
-    margin-top: 0;
-    font-size: clamp(51px, 15.2vw, 62px);
-    line-height: 0.94;
-  }
-}
-
-@media (max-width: 370px) {
-  .hero-copy h1,
-  .event-slide-copy h2 {
-    font-size: 49px;
   }
 }
