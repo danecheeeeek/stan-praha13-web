@@ -22,22 +22,6 @@
     ]
   },
   {
-    "visible": false,
-    "layout": "event",
-    "title": "Procházka Prahou 13",
-    "text": "20. července v 18:00 od metra Nové Butovice. Projděte s námi místa, kde se bude Praha 13 měnit.",
-    "image": "/assets/images/carousel-3.png",
-    "imageAlt": "Pozvánka na procházku Prahou 13 a zahájení kampaně",
-    "actions": [
-      {
-        "label": "Událost na Facebooku",
-        "url": "https://www.facebook.com/starostovenezavisli.praha/posts/p%C5%99ij%C4%8Fte-na-dal%C5%A1%C3%AD-komentovanou-proch%C3%A1zku-prahou-s-architektem-urbanistou-a-n%C3%A1m%C4%9Bst/1353368403558954/",
-        "style": "primary",
-        "external": true
-      }
-    ]
-  },
-  {
     "visible": true,
     "layout": "event",
     "title": "Zahájili jsme kampaň!",
