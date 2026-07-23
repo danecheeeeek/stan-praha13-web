@@ -22,7 +22,7 @@
     ]
   },
   {
-    "visible": true,
+    "visible": false,
     "layout": "event",
     "title": "Procházka Prahou 13",
     "text": "20. července v 18:00 od metra Nové Butovice. Projděte s námi místa, kde se bude Praha 13 měnit.",
@@ -36,5 +36,13 @@
         "external": true
       }
     ]
+  },
+  {
+    "visible": true,
+    "layout": "event",
+    "title": "Zahájili jsme kampaň!",
+    "text": "Děkujeme všem za účast, podporu a skvělou atmosféru. Těšíme se na další setkání s vámi!",
+    "image": "/assets/images/carousel-5.png",
+    "imageAlt": "zahajili-jsme-kampan"
   }
 ]
