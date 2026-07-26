@@ -28,5 +28,13 @@
     "text": "Děkujeme všem za účast, podporu a skvělou atmosféru. Těšíme se na další setkání s Vámi!",
     "image": "/assets/images/carousel-7-1.png",
     "imageAlt": "zahajili-jsme-kampan"
+  },
+  {
+    "visible": true,
+    "layout": "event",
+    "title": "Architektonická procházka Prahou 13",
+    "text": "20.7 jsme se s Petrem Hlaváčkem, náměstkem primátora pro rozvoj a Vojtou Ludvíkem, naším lídrem, prošli po místech, kde se Praha 13 bude měnit. Díky, že jste přišli, bylo nás hodně! ",
+    "image": "/assets/images/carousel-8.png",
+    "imageAlt": "hlavacek-prochazka-diky"
   }
 ]
