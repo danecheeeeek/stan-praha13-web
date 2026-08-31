@@ -24,6 +24,14 @@
   {
     "visible": true,
     "layout": "event",
+    "title": "Pojďte s námi na procházku!",
+    "text": "Přijďte se ve čtvrtek projít a popovídat si s naším kandidátem na starostu Vojtou Ludvíkem a předsedou Starostů Vítem Rakušanem!\n\nBudeme se na Vás těšit! 💛🩷",
+    "image": "/assets/images/untitled-design-1.png",
+    "imageAlt": "Vojta a Rakušan prochazka"
+  },
+  {
+    "visible": true,
+    "layout": "event",
     "title": "Zahájili jsme kampaň!",
     "text": "Děkujeme všem za účast, podporu a skvělou atmosféru. Těšíme se na další setkání s Vámi!",
     "image": "/assets/images/carousel-7-2.png",
