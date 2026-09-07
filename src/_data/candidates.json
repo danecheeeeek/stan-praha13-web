@@ -108,7 +108,7 @@
     "featured": false,
     "number": 11,
     "positionLabel": "Kandidát č. 11",
-    "name": "Andrea Veverková, DiS",
+    "name": "Pierre Meme",
     "role": "Pracovnice ve veřejné správě",
     "color": "yellow"
   },
@@ -117,8 +117,8 @@
     "featured": false,
     "number": 12,
     "positionLabel": "Kandidát č. 12",
-    "name": "Adam Bouša",
-    "role": "Student zdravotnické školy",
+    "name": "Andrea Veverková, DiS",
+    "role": "Pracovnice ve veřejné správě",
     "color": "green"
   },
   {
@@ -126,6 +126,14 @@
     "featured": false,
     "number": 13,
     "positionLabel": "Kandidát č. 13",
+    "name": "Adam Bouša",
+    "role": "Student zdravotnické školy"
+  },
+  {
+    "visible": true,
+    "featured": false,
+    "number": 14,
+    "positionLabel": "Kandidát č. 14",
     "name": "Mgr. Olga Sedláčková, MBA",
     "role": "Ekonomka, projektová manažerka",
     "color": "pink"
@@ -133,8 +141,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 14,
-    "positionLabel": "Kandidát č. 14",
+    "number": 15,
+    "positionLabel": "Kandidát č. 15",
     "name": "Václav Pavelka",
     "role": "Ředitel poradenské firmy",
     "color": "purple"
@@ -142,8 +150,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 15,
-    "positionLabel": "Kandidát č. 15",
+    "number": 16,
+    "positionLabel": "Kandidát č. 16",
     "name": "Jakub Sobotka",
     "role": "Pojistný matematik",
     "color": "yellow"
@@ -151,8 +159,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 16,
-    "positionLabel": "Kandidát č. 16",
+    "number": 17,
+    "positionLabel": "Kandidát č. 17",
     "name": "Bc. Filip Hobza",
     "role": "Projektový manažer",
     "color": "green"
@@ -160,8 +168,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 17,
-    "positionLabel": "Kandidát č. 17",
+    "number": 18,
+    "positionLabel": "Kandidát č. 18",
     "name": "Mgr. Eva Lee",
     "role": "Překladatelka",
     "color": "pink"
@@ -169,8 +177,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 18,
-    "positionLabel": "Kandidát č. 18",
+    "number": 19,
+    "positionLabel": "Kandidát č. 19",
     "name": "Iveta Fajfrlíková",
     "role": "Knihovnice",
     "color": "purple"
@@ -178,8 +186,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 19,
-    "positionLabel": "Kandidát č. 19",
+    "number": 20,
+    "positionLabel": "Kandidát č. 20",
     "name": "Ing. Luboš Klouda",
     "role": "Podnikatel",
     "color": "yellow"
@@ -187,8 +195,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 20,
-    "positionLabel": "Kandidát č. 20",
+    "number": 21,
+    "positionLabel": "Kandidát č. 21",
     "name": "doc. MUDr. Zdeněk Volný",
     "role": "Lékař",
     "color": "green"
@@ -196,8 +204,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 21,
-    "positionLabel": "Kandidát č. 21",
+    "number": 22,
+    "positionLabel": "Kandidát č. 22",
     "name": "Ing. Jan Fischer",
     "role": "Vývojový inženýr",
     "color": "pink"
@@ -205,8 +213,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 22,
-    "positionLabel": "Kandidát č. 22",
+    "number": 23,
+    "positionLabel": "Kandidát č. 23",
     "name": "Veronika Vavrušková",
     "role": "Studentka",
     "color": "purple"
@@ -214,8 +222,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 23,
-    "positionLabel": "Kandidát č. 23",
+    "number": 24,
+    "positionLabel": "Kandidát č. 24",
     "name": "Bc. Adam Procházka",
     "role": "Programátor",
     "color": "yellow"
@@ -223,8 +231,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 24,
-    "positionLabel": "Kandidát č. 24",
+    "number": 25,
+    "positionLabel": "Kandidát č. 25",
     "name": "Martin Sedláček",
     "role": "Finanční ředitel",
     "color": "green"
@@ -232,8 +240,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 25,
-    "positionLabel": "Kandidát č. 25",
+    "number": 26,
+    "positionLabel": "Kandidát č. 26",
     "name": "PaedDr. Alena Panochová",
     "role": "Pedagožka, hudebnice, sbormistryně DPS Klíček",
     "color": "pink"
@@ -241,8 +249,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 26,
-    "positionLabel": "Kandidát č. 26",
+    "number": 27,
+    "positionLabel": "Kandidát č. 27",
     "name": "Dana Dědečková",
     "role": "Učitelka v mateřské školce",
     "color": "purple"
@@ -250,8 +258,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 27,
-    "positionLabel": "Kandidát č. 27",
+    "number": 28,
+    "positionLabel": "Kandidát č. 28",
     "name": "Magdalena Inkov",
     "role": "Pedagožka",
     "color": "yellow"
@@ -259,8 +267,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 28,
-    "positionLabel": "Kandidát č. 28",
+    "number": 29,
+    "positionLabel": "Kandidát č. 29",
     "name": "Jiřina Pavelková",
     "role": "Důchodkyně",
     "color": "green"
@@ -268,8 +276,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 29,
-    "positionLabel": "Kandidát č. 29",
+    "number": 30,
+    "positionLabel": "Kandidát č. 30",
     "name": "Lucie Růžková",
     "role": "Lektorka",
     "color": "pink"
@@ -277,8 +285,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 30,
-    "positionLabel": "Kandidát č. 30",
+    "number": 31,
+    "positionLabel": "Kandidát č. 31",
     "name": "Hana Marková",
     "role": "IT konzultant",
     "color": "purple"
@@ -286,8 +294,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 31,
-    "positionLabel": "Kandidát č. 31",
+    "number": 32,
+    "positionLabel": "Kandidát č. 32",
     "name": "Ing. Magdaléna Mašková",
     "role": "Zootechnik, parkurová jezdkyně",
     "color": "yellow"
@@ -295,8 +303,8 @@
   {
     "visible": true,
     "featured": false,
-    "number": 32,
-    "positionLabel": "Kandidát č. 32",
+    "number": 33,
+    "positionLabel": "Kandidát č. 33",
     "name": "Ing. Bc. Jana Vítová",
     "role": "Důchodkyně, chemik",
     "color": "green"
@@ -304,20 +312,11 @@
   {
     "visible": true,
     "featured": false,
-    "number": 33,
-    "positionLabel": "Kandidát č. 33",
+    "number": 34,
+    "positionLabel": "Kandidát č. 34",
     "name": "Marián Vašek",
     "role": "Výčepní",
     "color": "pink"
-  },
-  {
-    "visible": true,
-    "featured": false,
-    "number": 34,
-    "positionLabel": "Kandidát č. 34",
-    "name": "Ing. Arnošt Bicek",
-    "role": "Důchodce",
-    "color": "purple"
   },
   {
     "visible": true,
