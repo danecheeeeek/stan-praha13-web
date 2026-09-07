@@ -803,7 +803,7 @@ h3 {
   min-height: 88px;
   display: grid;
   grid-template-columns: 58px 1fr;
-  align-items: center;
+  align-items: start;
   gap: 15px;
   padding: 15px 18px;
   border-radius: 15px;
@@ -820,6 +820,31 @@ h3 {
   color: var(--white);
   font-family: "Oldschool Grotesk", Impact, sans-serif;
   font-size: 22px;
+}
+
+.compact-candidate-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+}
+
+.compact-candidate-info strong,
+.compact-candidate-info span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.compact-candidate-info strong {
+  font-family: "Oldschool Grotesk", Impact, sans-serif;
+  font-size: 21px;
+  line-height: 1.08;
+}
+
+.compact-candidate-info span {
+  font-size: 16px;
+  line-height: 1.28;
 }
 
 /* Program */
@@ -1744,6 +1769,9 @@ h3 {
   .compact-candidates-grid {
     grid-template-columns: 1fr;
   }
+
+  .compact-candidate-info strong { font-size: 20px; }
+  .compact-candidate-info span { font-size: 15px; }
 
   .program-card,
   .news-card,

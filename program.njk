@@ -1,0 +1,25 @@
+---
+layout: base.njk
+permalink: program.html
+canonicalPath: /program.html
+title: Naše priority | STAN Praha 13
+description: Programové priority Starostů pro Prahu 13.
+navKey: program
+---
+<section class="page-hero">
+  <div class="container">
+    <h1>Dejme Praze 13 směr</h1>
+    <p>Chceme moderní, sebevědomou a živou městskou část. Podrobný program připravujeme společně s odborníky i obyvateli Třináctky.</p>
+  </div>
+</section>
+
+<section class="page-main">
+  <div class="container page-panel">
+    <div class="section-title"><h2>Naše priority</h2><p>Témata, ve kterých Praha 13 potřebuje nový impulz, odbornost a konkrétní práci.</p></div>
+    <div class="program-grid">
+      {% for priority in program | visible %}
+      <article class="program-card reveal"><span class="program-index">{{ loop.index | pad2 }}</span><h2>{{ priority.title }}</h2><p>{{ priority.text }}</p></article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
