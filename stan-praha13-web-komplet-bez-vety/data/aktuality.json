@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "prochazka-prahou-13",
+    "dateLabel": "20. 7. 2026 od 18:00",
+    "title": "Architektonická procházka Prahou 13 a zahájení kampaně",
+    "summary": "S Petrem Hlaváčkem a Vojtěchem Ludvíkem se vydáme od Nových Butovic přes Sluneční náměstí až do Centrálního parku. Procházkou zároveň zahájíme naši kampaň pro komunální volby 2026.",
+    "image": "/assets/images/prochazka-praha13.webp",
+    "imageAlt": "Pozvánka na procházku Prahou 13 a zahájení kampaně",
+    "details": "Sejdeme se u metra Nové Butovice a společně projdeme místa, kde se bude Praha 13 měnit. Procházku zakončíme v Centrálním parku u hřiště u Nepomuckého rybníka, kde zahájíme naši kampaň na Třináctce.\n\nPřipravené bude občerstvení, čepované pivo i nealko a pro děti skákací hrad. Přijďte s námi strávit pondělní večer.",
+    "gallery": [],
+    "externalUrl": "https://www.facebook.com/starostovenezavisli.praha/posts/p%C5%99ij%C4%8Fte-na-dal%C5%A1%C3%AD-komentovanou-proch%C3%A1zku-prahou-s-architektem-urbanistou-a-n%C3%A1m%C4%9Bst/1353368403558954/",
+    "externalLabel": "Událost na Facebooku",
+    "showInCarousel": true,
+    "carouselTitle": "Procházka Prahou 13",
+    "carouselSummary": "20. července v 18:00 od metra Nové Butovice. Projděte s námi místa, kde se bude Praha 13 měnit.",
+    "carouselImage": "/assets/images/prochazka-praha13.webp",
+    "carouselImageAlt": "Pozvánka na procházku Prahou 13 a zahájení kampaně"
+  },
+  {
+    "slug": "dalsi-akce-na-trinactce",
+    "dateLabel": "Připravujeme",
+    "title": "Další akce na Třináctce",
+    "summary": "Procházka bude první z dalších setkání, která chystáme. Sledujte nás, ať vám neuniknou nové termíny ani místa.",
+    "image": "",
+    "imageAlt": "",
+    "details": "",
+    "gallery": [],
+    "externalUrl": "https://www.facebook.com/STANpraha13",
+    "externalLabel": "Sledovat na Facebooku",
+    "showInCarousel": false,
+    "carouselTitle": "",
+    "carouselSummary": "",
+    "carouselImage": "",
+    "carouselImageAlt": ""
+  },
+  {
+    "slug": "kontaktni-kampan",
+    "dateLabel": "Brzy v ulicích",
+    "title": "Potkáme se v kontaktní kampani",
+    "summary": "Budeme chodit za vámi do ulic napříč Prahou 13. Sledujte naše sociální sítě a zjistěte, kdy budeme právě ve vašem okolí.",
+    "image": "",
+    "imageAlt": "",
+    "details": "",
+    "gallery": [],
+    "externalUrl": "https://www.instagram.com/starostove.praha13/",
+    "externalLabel": "Sledovat na Instagramu",
+    "showInCarousel": false,
+    "carouselTitle": "",
+    "carouselSummary": "",
+    "carouselImage": "",
+    "carouselImageAlt": ""
+  }
+]

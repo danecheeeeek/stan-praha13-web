@@ -1,0 +1,29 @@
+[
+  {
+    "visible": true,
+    "label": "E-mail",
+    "title": "Napište týmu",
+    "text": "Podněty, dotazy i nabídky pomoci nám můžete poslat přímo e-mailem.",
+    "buttonLabel": "vojtech.ludvik@stan.cz",
+    "buttonUrl": "mailto:vojtech.ludvik@stan.cz",
+    "external": false
+  },
+  {
+    "visible": true,
+    "label": "Facebook",
+    "title": "Starostové Praha 13",
+    "text": "Aktuality, pozvánky na akce a dění z naší městské části.",
+    "buttonLabel": "Otevřít Facebook",
+    "buttonUrl": "https://www.facebook.com/STANpraha13",
+    "external": true
+  },
+  {
+    "visible": true,
+    "label": "Instagram",
+    "title": "@starostove.praha13",
+    "text": "Fotografie, videa a rychlé novinky z kampaně i našich akcí.",
+    "buttonLabel": "Otevřít Instagram",
+    "buttonUrl": "https://www.instagram.com/starostove.praha13/",
+    "external": true
+  }
+]
