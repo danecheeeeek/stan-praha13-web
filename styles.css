@@ -2317,15 +2317,16 @@ h3 {
   }
 
   .election-cta__portrait img {
-    width: 76%;
+    width: 72%;
     height: 390px;
+    transform: translateX(28px);
   }
 
   .election-cta__portrait .election-cta__signature {
-    top: 0;
-    left: 9%;
+    top: 108px;
+    left: 0;
     bottom: auto;
-    width: 210px;
+    width: 165px;
     z-index: 2;
   }
 
