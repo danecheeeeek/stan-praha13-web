@@ -2324,7 +2324,7 @@ h3 {
 
   .election-cta__portrait .election-cta__signature {
     top: 92px;
-    left: 0;
+    left: -14px;
     bottom: auto;
     width: 185px;
     z-index: 2;
