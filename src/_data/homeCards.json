@@ -12,11 +12,11 @@
   {
     "visible": true,
     "title": "Náš program",
-    "text": "Jsme vaši sousedé a každý den vidíme, co na Třináctce funguje a co by šlo dělat jinak. Pokud dostaneme důvěru vrátit se na radnici, chceme přinést rozvoj s vizí, jasná pravidla a otevřenější komunikaci s lidmi.",
-    "image": "/assets/images/program.jpg",
-    "imageAlt": "Náš program pro Prahu 13",
-    "artClass": "",
-    "buttonLabel": "Poznejte naše priority",
+    "text": "Lepší zítřky pro všechny generace. Přinášíme konkrétní kroky, díky kterým se bude v Praze 13 dobře žít dnes i v budoucnu.",
+    "image": "",
+    "imageAlt": "Programové priority",
+    "artClass": "art-program",
+    "buttonLabel": "Prohlédnout si celý program",
     "buttonUrl": "/program.html"
   },
   {

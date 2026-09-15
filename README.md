@@ -4,19 +4,21 @@ Statický responzivní web inspirovaný novým vizuálním stylem webu STAN Prah
 
 ## Náhled
 
-Web lze otevřít přímo přes `index.html` nebo spustit lokální server:
+Pro správné načtení písem, obrázků a všech odkazů spusťte v rozbalené složce lokální server:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Poté otevřete `http://localhost:8080`.
+Poté otevřete `http://localhost:8080`. Program je na adrese `http://localhost:8080/program.html`.
+
+Alternativně lze použít `npm install` a `npm run dev`; náhled pak běží na `http://localhost:4173`.
 
 ## Stránky
 
 - `index.html` – úvodní carousel ovládaný tečkami, klávesnicí nebo tažením, představení týmu, programu a možností zapojení
 - `tym.html` – kandidátka: 7 velkých profilů s fotografiemi a kompaktní seznam kandidátů 8–35
-- `program.html` – šest průběžně rozšiřitelných programových priorit
+- `program.html` – interaktivní programová mapa s devíti body, Korzem Hůrka a Radlickou radiálou
 - `aktuality.html` – aktuality a události s volitelnými fotografiemi a rozbalovacími podrobnostmi
 - `kontakt.html` – kontaktní údaje a sociální sítě
 - `zapojte-se.html` – pět možností zapojení včetně kampaně, podnětů a Mladých Starostů
@@ -25,7 +27,7 @@ Texty, fotografie a odkazy běžných stránek lze před nasazením upravit př�
 
 ## Aktuality, fotografie a úvodní carousel přes Pages CMS
 
-Repozitář obsahuje soubor `.pages.yml`, takže po připojení repozitáře na [Pages CMS](https://pagescms.org/) uvidíte editor **Aktuality a carousel**. Každá položka v editoru představuje jednu aktualitu.
+Repozitář obsahuje soubor `.pages.yml`, takže po připojení repozitáře na [Pages CMS](https://pagescms.org/) uvidíte editor aktualit, carouselu, kandidátů, programu a úvodních karet. Každá položka programu obsahuje číslo (u bodů), nadpis, žluté bubliny a popis.
 
 - **Adresa aktuality** je krátký jedinečný název bez mezer a diakritiky, například `prochazka-prahou-13`. Po zveřejnění ji neměňte, aby zůstaly funkční odkazy.
 - **Hlavní fotografie** je volitelná. Na počítači se zobrazí vlevo od textu, na mobilu nad textem. Bez fotografie zabere text celou šířku.

@@ -1,42 +1,172 @@
 [
   {
     "visible": true,
-    "title": "Živá Třináctka",
-    "text": "Praha 13 nemá být jen místem, kde lidé bydlí a přespávají. Chceme městskou část, kde se pravidelně konají kulturní, komunitní a sportovní akce a kde vznikají přirozená místa pro setkávání.\n\nBudeme podporovat aktivity pro děti, mladé lidi, rodiny i seniory. Oživit chceme náměstí, parky a další veřejná místa, aby se na Třináctce něco dělo po celý rok, nejen při jednorázových akcích."
+    "kind": "point",
+    "number": 1,
+    "id": "point-1",
+    "title": "Sluneční náměstí",
+    "bubbles": [
+      "Architektonická soutěž",
+      "Nové gymnázium a studovna pro všechny"
+    ],
+    "text": "Sluneční náměstí si zaslouží velkou pozornost. Budeme prosazovat architektonickou soutěž na rozvoj městských pozemků a veřejné budovy. Cílem není zaplnit volné místo za každou cenu, ale vytvořit důstojné náměstí, které bude fungovat jako centrum radnice, vzdělávání, služeb a veřejného života. Budeme připravovat projekt nového gymnázia na Slunečním náměstí, doplněného veřejně přístupnou studovnou. Praha 13 potřebuje posílit středoškolské vzdělávání a zároveň nabídnout mladým lidem místo, kde mohou studovat, pracovat a potkávat se. Veřejná budova může smysluplně spojit více funkcí a být živá od rána do večera.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 1", "x": 83.7, "y": 47.5, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 72.6, "y": 42.5, "w": 14.8, "h": 12.5 },
+      { "type": "target", "label": "místo Slunečního náměstí", "x": 72.0, "y": 41.2, "w": 6.8, "h": 7.0 }
+    ]
   },
   {
     "visible": true,
-    "title": "Rozvoj s jasnou vizí",
-    "text": "Praha 13 se musí rozvíjet podle dlouhodobé vize, ne pouze reagovat na jednotlivé developerské záměry. Nejsme proti nové výstavbě, ale musí mít jasná pravidla a respektovat charakter okolních čtvrtí.\n\nKaždý větší projekt má přinášet také školy, služby, zeleň, dopravu a kvalitní veřejný prostor. Chceme, aby o důležitých změnách radnice jednala otevřeně a zapojovala obyvatele ještě před tím, než bude o všem rozhodnuto."
+    "kind": "point",
+    "number": 2,
+    "id": "point-2",
+    "title": "Makču Pikču",
+    "bubbles": [
+      "Rekultivace haldy"
+    ],
+    "text": "Na korzo musí navázat proměna rozsáhlé plochy přezdívané Makču Pikču. Dnes jde o mimořádně velké území bez jasného konceptu. Vidíme zde prostor pro rekreační park, sportoviště, amfiteátr, komunitní akce a další využití, které doplní Centrální park a vytvoří skutečné srdce Třináctky. Návrh musí vzniknout v otevřené soutěži a v dialogu s obyvateli.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 2", "x": 71.9, "y": 15.6, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 65.0, "y": 22.5, "w": 12.5, "h": 25.0 },
+      { "type": "target", "label": "území Makču Pikču", "x": 64.7, "y": 41.5, "w": 6.8, "h": 7.0 }
+    ]
   },
   {
     "visible": true,
-    "title": "Kvalitní veřejný prostor",
-    "text": "Veřejný prostor je to, co používáme každý den – ulice, chodníky, náměstí, okolí metra, parky i místa před školami. Chceme, aby byl čistý, bezpečný, bez zbytečného vizuálního smogu a dobře udržovaný.\n\nPraze 13 chybí také více míst, kde se dá skutečně zastavit a trávit čas. Budeme proto podporovat kvalitní mobiliář, posezení, drobný sport, lepší osvětlení a promyšlenou obnovu zanedbaných míst."
+    "kind": "point",
+    "number": 3,
+    "id": "point-3",
+    "title": "Na Pískách",
+    "bubbles": [
+      "Rozvoj lokality Na Pískách"
+    ],
+    "text": "Aktivně podpoříme také obnovu rekreační oblasti u pramene Motolského potoka v lokalitě Na Pískách. Jedná se o cenné místo, které přežilo provoz továrny a výstavbu obchodních center v jeho bezprostředním okolí. Musíme ho však nadále chránit a pečovat o něj, aby tu zůstal i pro další generace.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 3", "x": 28.8, "y": 21.2, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 30.8, "y": 24.0, "w": 7.0, "h": 12.5 },
+      { "type": "target", "label": "lokalita Na Pískách", "x": 33.0, "y": 31.4, "w": 6.8, "h": 7.0 }
+    ]
   },
   {
     "visible": true,
-    "title": "Zeleň, parky a ochrana před horkem",
-    "text": "Praha 13 má velký Centrální park, rybníky, přírodní území i množství zelených ploch. Chceme o ně lépe pečovat a využít jejich potenciál pro odpočinek, rekreaci, sport i setkávání lidí.\n\nZároveň však nestačí mít zeleň pouze v parcích. S přibývajícími horkými léty potřebujeme více stromů, stínu a vodních prvků také podél cest na metro, do škol nebo na nákup. Chceme opravit nefunkční pítka, mlžítka a vodní prvky a doplnit je tam, kde dnes chybí."
+    "kind": "point",
+    "number": 4,
+    "id": "point-4",
+    "title": "Velká Ohrada",
+    "bubbles": [
+      "Řešení parkování",
+      "Pilotní revitalizace veřejných prostranství uvnitř sídlišť"
+    ],
+    "text": "Tato oblast nepotřebuje modré zóny, ale promyšlené řešení parkování a postupnou revitalizaci veřejných prostranství uvnitř sídliště. Chceme lépe využít stávající parkovací kapacity, doplnit chybějící místa tam, kde to dává smysl, a přitom neubírat zeleň. Pilotní úpravy mají přinést více stromů a stínu, bezpečné pěší trasy, kvalitní povrchy, místa k posezení a příjemnější okolí domů. O konkrétní podobě musí rozhodovat i místní obyvatelé.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 4", "x": 84.8, "y": 73.7, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 70.2, "y": 67.4, "w": 17.5, "h": 13.0 },
+      { "type": "target", "label": "oblast Velké Ohrady", "x": 69.0, "y": 66.0, "w": 6.8, "h": 7.0 }
+    ]
   },
   {
     "visible": true,
-    "title": "Doprava, která propojuje město",
-    "text": "Praha 13 potřebuje dopravu, která propojí její jednotlivé části a nabídne lidem skutečnou alternativu k autu. Chceme bezpečnější pěší trasy, lepší podmínky pro cyklisty a spolehlivější veřejnou dopravu.\n\nZaměříme se na propojení Hůrky, Nových Butovic, Lužin, Velké Ohrady, Třebonic i dalších lokalit. U velkých dopravních staveb budeme požadovat řešení, která minimalizují hluk, dopady na zeleň a zátěž pro obyvatele."
+    "kind": "point",
+    "number": 5,
+    "id": "point-5",
+    "title": "Centrální park",
+    "bubbles": [
+      "Oživení okolí rybníků"
+    ],
+    "text": "V rámci oživení Centrálního parku navrhujeme u jednoho z rybníků vybudovat pobytové molo s posezením a drobným občerstvením. Zároveň chceme prověřit možnosti přírodního plavání a podle místních podmínek posoudit i zřízení půjčovny loděk.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 5", "x": 63.35, "y": 84.235, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 62.0, "y": 48.0, "w": 6.0, "h": 41.0 },
+      { "type": "target", "label": "Centrální park", "x": 59.8, "y": 46.2, "w": 6.8, "h": 7.0 }
+    ]
   },
   {
     "visible": true,
-    "title": "Bezpečná a čistá Praha 13",
-    "text": "Bezpečnost začíná v každodenním veřejném prostoru. Lidé se musí cítit\nbezpečně cestou od metra, v parcích i kolem škol. K tomu patří dostatečné\nosvětlení, přehledné prostředí, údržba, práce městské policie a schopnost\nreagovat na konkrétní podněty z jednotlivých lokalit. Samotný počet hlídek\nvšak nenahradí dobře navrženou ulici."
+    "kind": "point",
+    "number": 6,
+    "id": "point-6",
+    "title": "Luka",
+    "bubbles": [
+      "Luka potřebují proměnu"
+    ],
+    "text": "Zanedbané a zchátralé obchodní centrum i jeho okolí si zaslouží nový život. Metropolitní plán s proměnou této lokality navíc již počítá. Budeme prosazovat otevřený dialog radnice s občany, aby z Luk vzniklo živé a příjemné místo odpovídající potřebám místních.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 6", "x": 48.975, "y": 84.235, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 49.0, "y": 49.5, "w": 5.5, "h": 40.0 },
+      { "type": "target", "label": "Luka", "x": 50.0, "y": 48.0, "w": 6.8, "h": 7.0 }
+    ]
   },
   {
     "visible": true,
-    "title": "Otevřená radnice a živá čtvrť",
-    "text": "Radnice má být službou obyvatelům, ne uzavřeným úřadem, který lidé zaznamenají až ve chvíli, kdy je rozhodnuto. Chceme včasnou, srozumitelnou a pravidelnou komunikaci o důležitých projektech, investicích i změnách v území.\n\nObyvatelé mají mít možnost vyjádřit se dříve, než vzniknou hotové návrhy. Budeme podporovat otevřenější hospodaření, zveřejňování podkladů a skutečné zapojení veřejnosti do rozhodování o budoucnosti Prahy 13."
+    "kind": "point",
+    "number": 7,
+    "id": "point-7",
+    "title": "Západní Město",
+    "bubbles": [
+      "Rozvoj pod kontrolou"
+    ],
+    "text": "Západní Město už vzniká. Musíme proto hlídat, aby nová výstavba nepředbíhala vznik škol, služeb, zeleně, kvalitního veřejného prostoru a dopravního napojení. Radnice má důsledně kontrolovat závazky developerů, koordinaci jednotlivých etap i dopady stavby na současné obyvatele. O dalších změnách se musí rozhodovat otevřeně a společně s lidmi, kteří v lokalitě žijí.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 7", "x": 34.6, "y": 84.235, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 35.5, "y": 48.0, "w": 5.5, "h": 41.0 },
+      { "type": "target", "label": "Západní Město", "x": 34.0, "y": 46.2, "w": 6.8, "h": 7.0 }
+    ]
   },
   {
     "visible": true,
-    "title": "Bezpečnost, zdraví a důstojné stárnutí",
-    "text": "Bezpečná městská část potřebuje nejen policii, ale také dobře osvětlené cesty, udržovaná veřejná místa a připravenost na mimořádné situace. Chceme podporovat prevenci a řešit problémová místa dříve, než se z nich stanou dlouhodobé potíže.\n\nPraha 13 má být místem pro všechny generace. Proto chceme dostupnější sociální a zdravotní služby, lepší podporu seniorů, bezpečné prostředí pro děti a veřejný prostor, ve kterém se mohou pohodlně pohybovat také lidé se zdravotním omezením."
+    "kind": "point",
+    "number": 8,
+    "id": "point-8",
+    "title": "Třebonice a Chaby",
+    "bubbles": [
+      "Nejdřív plán, potom výstavba"
+    ],
+    "text": "V Třebonicích a Chabech se zatím nestaví – právě proto máme šanci připravit jejich rozvoj správně. Chceme územní studii na úrovni hlavního města, která předem určí místo pro školy, služby, práci, zeleň, pěší trasy i veřejnou dopravu. O budoucnosti území musí rozhodovat město, městská část a veřejnost společně, ne jednotlivé developerské projekty izolovaně.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 8", "x": 20.225, "y": 84.235, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 14.0, "y": 50.0, "w": 11.5, "h": 40.0 },
+      { "type": "target", "label": "Třebonice a Chaby", "x": 11.5, "y": 48.8, "w": 6.8, "h": 7.0 }
+    ]
+  },
+  {
+    "visible": true,
+    "kind": "point",
+    "number": 9,
+    "id": "point-9",
+    "title": "MÚK Třebonice",
+    "bubbles": [
+      "Zkapacitnění křižovatky"
+    ],
+    "text": "Podporujeme nezbytné zkapacitnění MÚK Třebonice pro zajištění plynulé dopravy. Z pozice městské části budeme jednat s investorem, abychom garantovali adekvátní protihluková opatření a minimalizovali zátěž pro místní obyvatele během stavby i následného provozu.",
+    "hotspots": [
+      { "type": "number", "label": "číslo 9", "x": 2.2, "y": 27.8, "w": 5.8, "h": 8.0 },
+      { "type": "connector", "label": "spojovací čára", "x": 4.0, "y": 29.0, "w": 8.0, "h": 18.0 },
+      { "type": "target", "label": "MÚK Třebonice", "x": 7.0, "y": 41.0, "w": 6.8, "h": 7.0 }
+    ]
+  },
+  {
+    "visible": true,
+    "kind": "route",
+    "id": "route-korzo-hurka",
+    "title": "Korzo Hůrka",
+    "bubbles": [],
+    "text": "V rámci oživení a zkultivování Prahy 13 se můžeme inspirovat principem newyorské High Line. Nejde o kopírování cizí atrakce, ale o využití dlouhé lineární trasy jako kvalitního veřejného prostoru. Korzo má nabídnout zeleň, místa k posezení, drobný sport, kulturu, bezpečné osvětlení a návaznost na služby v okolí. Má být příjemné každý den, ne jen při jednorázových akcích. Na korzo musí navázat proměna rozsáhlé plochy přezdívané Makču Pikču, o které si můžete přečíst kliknutím na číslo 2.",
+    "hotspots": [
+      { "type": "line", "label": "růžová a zelená trasa", "x": 39.0, "y": 43.2, "w": 34.0, "h": 16.5 },
+      { "type": "label", "label": "nadpis Korzo Hůrka", "x": 69.0, "y": 35.8, "w": 15.0, "h": 9.0 }
+    ]
+  },
+  {
+    "visible": true,
+    "kind": "route",
+    "id": "route-radlicka-radiala",
+    "title": "Radlická radiála",
+    "bubbles": [],
+    "text": "Podporujeme přípravu Radlické radiály podle aktuálně schválené studie, podle níž již nebude vést na povrchu a nebude rozdělovat čtvrti. Současně budeme požadovat územní studii jejího okolí. Ta musí řešit pěší a cyklistická propojení, veřejnou dopravu, hluk, zeleň i budoucí podobu navazujících území.",
+    "hotspots": [
+      { "type": "line", "label": "modrá trasa", "x": 70.5, "y": 27.0, "w": 17.5, "h": 15.0 },
+      { "type": "label", "label": "nadpis Radlická radiála", "x": 73.0, "y": 24.0, "w": 17.0, "h": 10.0 }
+    ]
   }
 ]

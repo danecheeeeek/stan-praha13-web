@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "eleventy",
+    "dev": "node preview-server.mjs",
     "serve": "eleventy --serve"
   },
   "devDependencies": {
