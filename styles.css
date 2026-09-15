@@ -2298,7 +2298,7 @@ h3 {
     flex-direction: column;
     align-items: stretch;
     width: calc(100% - 20px);
-    margin: -58px 10px 0;
+    margin: -26px 10px 0;
     z-index: 3;
   }
 
@@ -2310,7 +2310,7 @@ h3 {
   .election-cta__portrait {
     order: 4;
     width: 100%;
-    height: 370px;
+    height: 500px;
     margin-top: 0;
     z-index: 1;
     align-items: flex-end;
@@ -2318,14 +2318,14 @@ h3 {
 
   .election-cta__portrait img {
     width: 76%;
-    height: 100%;
+    height: 390px;
   }
 
   .election-cta__portrait .election-cta__signature {
-    top: 12px;
+    top: 0;
     left: 9%;
     bottom: auto;
-    width: 220px;
+    width: 210px;
     z-index: 2;
   }
 
