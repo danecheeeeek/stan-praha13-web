@@ -2319,14 +2319,14 @@ h3 {
   .election-cta__portrait img {
     width: 78%;
     height: 440px;
-    transform: translateX(34px);
+    transform: translateX(52px);
   }
 
   .election-cta__portrait .election-cta__signature {
     top: 92px;
     left: 0;
     bottom: auto;
-    width: 165px;
+    width: 185px;
     z-index: 2;
   }
 
