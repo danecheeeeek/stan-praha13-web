@@ -162,10 +162,27 @@ content:
       - name: visible
         label: Zobrazit prioritu
         type: boolean
+      - name: kind
+        label: Typ položky
+        type: select
+        required: true
+        options:
+          values:
+            - name: point
+              label: Programový bod
+            - name: route
+              label: Trasa
+      - name: number
+        label: Číslo na mapě
+        type: number
       - name: title
         label: Nadpis priority
         type: string
         required: true
+      - name: bubbles
+        label: Žluté bubliny
+        type: string
+        list: true
       - name: text
         label: Popis priority
         type: text

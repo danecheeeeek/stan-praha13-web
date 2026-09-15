@@ -415,6 +415,131 @@
     });
   };
 
+  const initializeProgramMap = () => {
+    const mapShell = document.querySelector("[data-program-map]");
+    if (!mapShell) return;
+
+    const hits = Array.from(mapShell.querySelectorAll("[data-map-group]"));
+    const highlights = Array.from(
+      mapShell.querySelectorAll("[data-map-highlight]"),
+    );
+    const panel = mapShell.querySelector("[data-map-info]");
+    const title = mapShell.querySelector("[data-map-info-title]");
+    const kicker = mapShell.querySelector("[data-map-info-kicker]");
+    const bubbles = mapShell.querySelector("[data-map-info-bubbles]");
+    const text = mapShell.querySelector("[data-map-info-text]");
+    const closeButton = mapShell.querySelector("[data-map-close]");
+    if (!hits.length || !panel || !title || !kicker || !bubbles || !text) return;
+
+    let activeGroup = null;
+    const hoveredPointSupports = new Map();
+
+    const getGroupHit = (group) =>
+      hits.find((hit) => hit.dataset.mapGroup === group);
+
+    const syncPointHover = (group) => {
+      const numberHit = hits.find(
+        (hit) =>
+          hit.dataset.mapGroup === group &&
+          hit.classList.contains("map-hit--number"),
+      );
+      if (!numberHit) return;
+      numberHit.classList.toggle(
+        "is-hovered",
+        (hoveredPointSupports.get(group)?.size || 0) > 0,
+      );
+    };
+
+    const setPointSupportHover = (hit, active) => {
+      if (
+        hit.dataset.mapKind !== "point" ||
+        hit.classList.contains("map-hit--number")
+      )
+        return;
+      const group = hit.dataset.mapGroup;
+      const supports = hoveredPointSupports.get(group) || new Set();
+      if (active) supports.add(hit);
+      else supports.delete(hit);
+      if (supports.size) hoveredPointSupports.set(group, supports);
+      else hoveredPointSupports.delete(group);
+      syncPointHover(group);
+    };
+
+    const setActiveState = (group) => {
+      hits.forEach((hit) => {
+        const active = hit.dataset.mapGroup === group;
+        hit.classList.toggle("is-selected", active);
+        hit.setAttribute("aria-pressed", String(active));
+      });
+      highlights.forEach((highlight) => {
+        highlight.classList.toggle(
+          "is-active",
+          highlight.dataset.mapHighlight === group,
+        );
+      });
+    };
+
+    const openGroup = (group) => {
+      const source = getGroupHit(group);
+      if (!source) return;
+      activeGroup = group;
+      const isRoute = source.dataset.mapKind === "route";
+      const number = source.dataset.mapNumber;
+      kicker.textContent = isRoute
+        ? "Programová trasa"
+        : `Programový bod ${number}`;
+      title.textContent = source.dataset.mapTitle || "";
+      text.textContent = source.dataset.mapText || "";
+      bubbles.replaceChildren();
+      String(source.dataset.mapBubbles || "")
+        .split("||")
+        .map((bubble) => bubble.trim())
+        .filter(Boolean)
+        .forEach((bubble) => {
+          const element = document.createElement("span");
+          element.className = "map-bubble";
+          element.textContent = bubble;
+          bubbles.append(element);
+        });
+      panel.dataset.mapGroup = group;
+      panel.hidden = false;
+      setActiveState(group);
+      panel.focus({ preventScroll: true });
+      if (window.matchMedia("(max-width: 760px)").matches) {
+        window.setTimeout(
+          () => panel.scrollIntoView({ behavior: "smooth", block: "nearest" }),
+          50,
+        );
+      }
+    };
+
+    const closeGroup = () => {
+      activeGroup = null;
+      panel.hidden = true;
+      panel.removeAttribute("data-map-group");
+      setActiveState(null);
+    };
+
+    hits.forEach((hit) => {
+      hit.setAttribute("aria-pressed", "false");
+      hit.addEventListener("click", () => openGroup(hit.dataset.mapGroup));
+      hit.addEventListener("pointerenter", () =>
+        setPointSupportHover(hit, true),
+      );
+      hit.addEventListener("pointerleave", () =>
+        setPointSupportHover(hit, false),
+      );
+    });
+    closeButton?.addEventListener("click", closeGroup);
+    mapShell.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && activeGroup) {
+        const previousGroup = activeGroup;
+        closeGroup();
+        getGroupHit(previousGroup)?.focus();
+      }
+    });
+  };
+
   const newsletterFormId = "n7DU5l";
   const newsletterStorageKey = "stan-praha13-newsletter-auto-shown";
   const newsletterTriggers = document.querySelectorAll(".newsletter-trigger");
@@ -462,4 +587,5 @@
   window.addEventListener("hashchange", () => openNewsFromHash(true));
   renderNewsPage();
   initializeHeroSliders();
+  initializeProgramMap();
 })();
