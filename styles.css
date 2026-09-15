@@ -635,6 +635,16 @@ h3 {
   object-position: center bottom;
 }
 
+.election-cta__portrait .election-cta__signature {
+  position: absolute;
+  z-index: 2;
+  left: -38%;
+  bottom: 54px;
+  width: 390px;
+  height: auto;
+  object-fit: contain;
+}
+
 /* Homepage cards */
 .content-wrap {
   padding: 34px 0 92px;
