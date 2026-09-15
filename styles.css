@@ -2298,13 +2298,22 @@ h3 {
   }
 
   .election-cta__portrait {
-    height: min(138vw, 660px);
-    margin-top: -8px;
+    height: min(150vw, 720px);
+    margin-top: -150px;
+    z-index: 1;
   }
 
   .election-cta__portrait img {
     width: 118%;
     height: 100%;
+  }
+
+  .election-cta__portrait .election-cta__signature {
+    top: -112px;
+    left: 0;
+    bottom: auto;
+    width: 240px;
+    z-index: 2;
   }
 
   .home-panel,
