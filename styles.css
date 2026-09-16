@@ -2148,7 +2148,7 @@ h3 {
   .hero-copy {
     grid-area: copy;
     justify-content: flex-start;
-    padding: 27px 54px 62px;
+    padding: 39px 54px 62px;
   }
 
   .hero-copy h1 {
