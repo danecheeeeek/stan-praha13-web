@@ -311,16 +311,57 @@
       letter-spacing: .018em;
     }
   </style>
+  <style>
+    #praha13-program-three-rows .p13-static-map {
+      margin-inline: calc(12px - clamp(18px, 4vw, 46px));
+    }
+    #praha13-program-three-rows .p13-static-map-scroll {
+      max-width: 100%;
+      overflow: auto;
+    }
+    #praha13-program-three-rows .p13-static-map a {
+      display: block;
+    }
+    #praha13-program-three-rows .p13-static-map img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    #praha13-program-three-rows .p13-static-map-hint {
+      display: none;
+    }
+    @media (max-width: 760px) {
+      #praha13-program-three-rows .p13-static-map-hint {
+        display: block;
+        margin: 0 8px 12px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      #praha13-program-three-rows .p13-static-map a {
+        width: 1600px;
+      }
+    }
+    @media (max-width: 540px) {
+      #praha13-program-three-rows .p13-static-map {
+        margin-inline: 0;
+      }
+    }
+  </style>
   <section class="p13-top">
     <h1>Rozvoj s vizí.<span>Jasná pravidla.</span>Otevřená radnice.</h1>
     <p class="p13-lead"><strong>Praha 13 je dobré místo k životu. Právě proto se nemusíme spokojit jen s tím, že se tu věci nějak udržují.</strong></p>
     <p class="p13-hero-intro">Máme na čem stavět: zeleň, metro, školy i čtvrti, kde se dobře žije. Chceme k nim přidat dlouhodobou vizi a novou energii. Rozvoj, který přináší bydlení společně se školami, službami a kvalitním veřejným prostorem. A radnici, která svá rozhodnutí vysvětluje včas a bere obyvatele jako partnery.</p>
-    <div class="p13-hero-actions"><a href="#p13-index">Objevte naši Prahu 13 zítřka</a><a href="#p13-priorities">Objevte naše priority</a></div>
+    <div class="p13-hero-actions"><a href="#p13-priorities">Objevte naše priority</a></div>
   </section>
   <section class="p13-main">
-    <a id="p13-index" href="assets/images/vize-pro-trinactku.png" target="_blank" rel="noopener" aria-label="Vize pro Třináctku – otevřít mapu v plném rozlišení" style="display:block">
-      <img src="assets/images/vize-pro-trinactku.png" alt="Vize pro Třináctku – mapa programových záměrů pro Prahu 13" width="7394" height="5292" decoding="async" style="display:block;width:100%;height:auto">
-    </a>
+    <div class="p13-static-map" id="p13-index">
+      <p class="p13-static-map-hint">Mapu posouvejte prstem do stran. Klepnutím ji otevřete v plném rozlišení a můžete ji přiblížit.</p>
+      <div class="p13-static-map-scroll" tabindex="0" role="region" aria-label="Vize pro Třináctku – posuvná mapa">
+        <a href="assets/images/vize-pro-trinactku.png" target="_blank" rel="noopener" aria-label="Vize pro Třináctku – otevřít mapu v plném rozlišení">
+          <img src="assets/images/vize-pro-trinactku.png" alt="Vize pro Třináctku – mapa programových záměrů pro Prahu 13" width="7394" height="5292" decoding="async">
+        </a>
+      </div>
+    </div>
     <section class="p13-priorities" id="p13-priorities" aria-labelledby="p13-priorities-title">
       <div class="p13-priorities-head"><h2 id="p13-priorities-title">Devět priorit.<br>Jeden směr.</h2></div>
       <details class="p13-priority" id="program-priority-01">
