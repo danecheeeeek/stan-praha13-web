@@ -535,7 +535,7 @@ h3 {
   min-height: 690px;
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+  grid-template-columns: 1fr;
   align-items: stretch;
 }
 
@@ -564,22 +564,7 @@ h3 {
 }
 
 .election-cta__heading h2 span:last-child {
-  color: #b95e95;
-}
-
-.election-cta__date {
-  width: max-content;
-  max-width: calc(100% - 20px);
-  margin: -33px 0 0 clamp(315px, 32.5vw, 510px);
-  position: relative;
-  z-index: 1;
-  line-height: 0;
-}
-
-.election-cta__date-bubble {
-  display: block;
-  width: clamp(220px, 22vw, 340px);
-  height: auto;
+  color: var(--pink);
 }
 
 .election-cta__text {
@@ -616,33 +601,6 @@ h3 {
   border: 3px solid var(--pink);
   background: transparent;
   color: var(--pink);
-}
-
-.election-cta__portrait {
-  min-width: 0;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.election-cta__portrait img {
-  width: min(118%, 700px);
-  height: 705px;
-  max-width: none;
-  object-fit: contain;
-  object-position: center bottom;
-}
-
-.election-cta__portrait .election-cta__signature {
-  position: absolute;
-  z-index: 2;
-  left: -17%;
-  bottom: 58px;
-  width: 285px;
-  height: auto;
-  object-fit: contain;
 }
 
 /* Homepage cards */
@@ -2045,19 +2003,11 @@ h3 {
 
   .election-cta__inner {
     min-height: 650px;
-    grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+    grid-template-columns: 1fr;
   }
 
   .election-cta__heading h2 {
     font-size: clamp(65px, 8.5vw, 88px);
-  }
-
-  .election-cta__date {
-    margin-left: clamp(280px, 36vw, 360px);
-  }
-
-  .election-cta__portrait img {
-    height: 650px;
   }
 
   .feature-card:last-child {
@@ -2269,24 +2219,12 @@ h3 {
 
   .election-cta__heading h2 {
     order: 1;
-    margin: 0 10px;
+    margin: 28px 10px 0;
     font-size: clamp(58px, 17.5vw, 78px);
     line-height: 0.9;
   }
 
-  .election-cta__date {
-    order: 2;
-    margin: 14px 0 0 8px;
-    padding: 0;
-    font-size: clamp(18px, 5.5vw, 24px);
-  }
-
-  .election-cta__date .stan-bubble-body {
-    padding: 9px 16px 8px;
-  }
-
   .election-cta__text {
-    order: 3;
     margin: 27px 10px 0;
     margin-top: 27px;
     font-size: 18px;
@@ -2298,36 +2236,13 @@ h3 {
     flex-direction: column;
     align-items: stretch;
     width: calc(100% - 20px);
-    margin: -26px 10px 0;
+    margin: 30px 10px 0;
     z-index: 3;
   }
 
   .election-cta__button {
     width: 100%;
     text-align: center;
-  }
-
-  .election-cta__portrait {
-    order: 4;
-    width: 100%;
-    height: 500px;
-    margin-top: -76px;
-    z-index: 1;
-    align-items: flex-end;
-  }
-
-  .election-cta__portrait img {
-    width: 78%;
-    height: 440px;
-    transform: translateX(52px);
-  }
-
-  .election-cta__portrait .election-cta__signature {
-    top: 92px;
-    left: -14px;
-    bottom: auto;
-    width: 185px;
-    z-index: 2;
   }
 
   .home-panel,
