@@ -24,7 +24,9 @@ navKey: team
           <img class="candidate-cutout" src="{{ candidate.image }}" alt="{{ candidate.name }}">
         </div>
         <div class="candidate-copy">
+          {% if candidate.number == 1 %}
           <span class="candidate-number">{{ candidate.positionLabel }}</span>
+          {% endif %}
           <h3>{{ candidate.name }}</h3>
           <p class="candidate-role">{{ candidate.role }}</p>
           <p class="candidate-annotation">{{ candidate.annotation }}</p>
@@ -34,24 +36,5 @@ navKey: team
       {% endfor %}
     </div>
 
-    <div class="compact-candidates-section">
-      <div class="section-title compact-section-title">
-        <h2>Kandidáti 8–35</h2>
-      </div>
-      <div class="compact-candidates-grid" role="group" aria-label="Kandidáti 8 až 35">
-        {% for candidate in visibleCandidates %}
-        {% if not candidate.featured %}
-        <article class="compact-candidate">
-          <div class="compact-avatar">{{ candidate.number }}</div>
-          {% if candidate.name %}
-          <div class="compact-candidate-info"><strong>{{ candidate.name }}</strong>{% if candidate.role %}<span>{{ candidate.role }}</span>{% endif %}</div>
-          {% else %}
-          <div class="compact-candidate-placeholder" aria-hidden="true"></div>
-          {% endif %}
-        </article>
-        {% endif %}
-        {% endfor %}
-      </div>
-    </div>
   </div>
 </section>
