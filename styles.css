@@ -853,6 +853,13 @@ h3 {
   object-position: center bottom;
 }
 
+.candidate-profile:nth-child(5) .candidate-cutout {
+  position: relative;
+  top: 25px;
+  transform: scale(1.07);
+  transform-origin: center bottom;
+}
+
 .candidate-copy {
   min-width: 0;
   align-self: center;
