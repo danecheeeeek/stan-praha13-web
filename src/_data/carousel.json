@@ -22,7 +22,7 @@
     ]
   },
   {
-    "visible": true,
+    "visible": false,
     "layout": "event",
     "title": "Prošli jsme si Rakušanem Prahu 13!",
     "text": "Procházka s Vítem Rakušanem, skvělá energie a plány pro budoucnost Třináctky! \n\nS Vojtou Ludvíkem a Vítem Rakušanem jsme diskutovali například o tom, jak konkrétně proměnit okolí Hůrky k lepšímu. Moc díky, že jste dorazili! 🚀",
@@ -38,7 +38,7 @@
     "imageAlt": "zahajili-jsme-kampan"
   },
   {
-    "visible": true,
+    "visible": false,
     "layout": "event",
     "title": "Architektonická procházka Prahou 13",
     "text": "Společně s Petrem Hlaváčkem, náměstkem primátora pro rozvoj a Vojtou Ludvíkem, naším lídrem, prošli po místech, kde se Praha 13 bude měnit. Díky, že jste přišli, bylo nás hodně! ",
