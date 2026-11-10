@@ -525,84 +525,6 @@ h3 {
   background: var(--yellow);
 }
 
-/* Election call to action */
-.election-cta {
-  overflow: hidden;
-  background: var(--yellow);
-}
-
-.election-cta__inner {
-  min-height: 690px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: stretch;
-}
-
-.election-cta__copy {
-  position: relative;
-  z-index: 2;
-  align-self: center;
-  padding: 64px 0 62px clamp(14px, 2.2vw, 32px);
-}
-
-.election-cta__heading {
-  position: relative;
-}
-
-.election-cta__heading h2 {
-  max-width: 860px;
-  margin: 0;
-  color: var(--pink);
-  font-size: clamp(72px, 7.4vw, 116px);
-  line-height: 0.87;
-  letter-spacing: -0.035em;
-}
-
-.election-cta__heading h2 span {
-  display: block;
-}
-
-.election-cta__heading h2 span:last-child {
-  color: var(--pink);
-}
-
-.election-cta__text {
-  max-width: 680px;
-  margin-top: 26px;
-  color: var(--pink);
-  font-size: clamp(19px, 1.55vw, 25px);
-  line-height: 1.32;
-}
-
-.election-cta__text p {
-  margin: 0 0 17px;
-}
-
-.election-cta__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 30px;
-}
-
-.election-cta__button {
-  min-height: 56px;
-  padding: 16px 26px 14px;
-  letter-spacing: 0.018em;
-}
-
-.election-cta__button--primary {
-  background: var(--pink);
-  color: var(--cream);
-}
-
-.election-cta__button--secondary {
-  border: 3px solid var(--pink);
-  background: transparent;
-  color: var(--pink);
-}
-
 /* Homepage cards */
 .content-wrap {
   padding: 34px 0 92px;
@@ -2008,15 +1930,6 @@ h3 {
     grid-template-columns: 1fr 1fr;
   }
 
-  .election-cta__inner {
-    min-height: 650px;
-    grid-template-columns: 1fr;
-  }
-
-  .election-cta__heading h2 {
-    font-size: clamp(65px, 8.5vw, 88px);
-  }
-
   .feature-card:last-child {
     grid-column: 1 / -1;
   }
@@ -2211,45 +2124,6 @@ h3 {
 
   .content-wrap {
     padding: 22px 0 64px;
-  }
-
-  .election-cta__inner {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .election-cta__copy {
-    display: contents;
-  }
-
-  .election-cta__heading h2 {
-    order: 1;
-    margin: 28px 10px 0;
-    font-size: clamp(58px, 17.5vw, 78px);
-    line-height: 0.9;
-  }
-
-  .election-cta__text {
-    margin: 27px 10px 0;
-    margin-top: 27px;
-    font-size: 18px;
-    line-height: 1.35;
-  }
-
-  .election-cta__actions {
-    order: 5;
-    flex-direction: column;
-    align-items: stretch;
-    width: calc(100% - 20px);
-    margin: 30px 10px 0;
-    z-index: 3;
-  }
-
-  .election-cta__button {
-    width: 100%;
-    text-align: center;
   }
 
   .home-panel,
