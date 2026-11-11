@@ -1711,9 +1711,13 @@ h3 {
 .news-card__title {
   margin: 0 0 12px;
   color: var(--pink);
-  font-size: clamp(36px, 4.4vw, 63px);
+  font-size: clamp(29px, 2.8vw, 40px);
   line-height: 1.03;
   text-wrap: balance;
+}
+
+.news-card--featured .news-card__title {
+  font-size: clamp(36px, 4.4vw, 63px);
 }
 
 .news-card__title a {
