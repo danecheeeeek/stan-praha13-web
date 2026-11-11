@@ -81,6 +81,11 @@ content:
       - name: visible
         label: Zobrazit aktualitu
         type: boolean
+      - name: slug
+        label: Adresa aktuality
+        type: string
+        required: true
+        description: Krátký jedinečný název bez mezer a diakritiky. Po zveřejnění ho neměňte.
       - name: dateLabel
         label: Datum nebo štítek
         type: string
@@ -90,6 +95,13 @@ content:
         label: Nadpis
         type: string
         required: true
+      - name: image
+        label: Hlavní fotografie
+        type: image
+      - name: imageAlt
+        label: Popis fotografie pro čtečky
+        type: string
+        description: Vyplňte, pokud je přidaná hlavní fotografie.
       - name: text
         label: Text aktuality
         type: text
@@ -105,19 +117,19 @@ content:
         type: boolean
 
   - name: candidates
-    label: Kandidáti
+    label: Náš tým
     type: file
     path: src/_data/candidates.json
     format: json
     list: true
     fields:
       - name: visible
-        label: Zobrazit kandidáta
+        label: Zobrazit člena týmu
         type: boolean
       - name: featured
         label: Velký profil
         type: boolean
-        description: Zapněte pro prvních sedm kandidátů s velkou fotografií a medailonkem.
+        description: Zapněte pro členy týmu s velkou fotografií a medailonkem.
       - name: number
         label: Číslo na kandidátce
         type: number
@@ -130,8 +142,14 @@ content:
         label: Jméno
         type: string
       - name: role
-        label: Povolání nebo role
+        label: Povolání (archiv)
         type: text
+        description: Uchovaný profesní údaj. Na stránce Náš tým se zobrazují funkce níže.
+      - name: functions
+        label: Funkce v samosprávě
+        type: string
+        list: true
+        description: Každou funkci vložte samostatně. Na webu se zobrazí jako bubliny pod sebou, ve stejném pořadí.
       - name: annotation
         label: Medailonek
         type: text

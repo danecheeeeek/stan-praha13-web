@@ -11,7 +11,7 @@ navKey: news
 
 {% macro newsCard(item, heading, featured) %}
 <article class="news-card{% if featured %} news-card--featured{% elif not item.image %} news-card--text{% endif %}">
-  {% if item.image %}
+  {% if item.image and not featured %}
   <div class="news-card__media">
     <img src="{{ item.image | escape }}" alt="{{ (item.imageAlt or "") | escape }}" loading="{{ "eager" if featured else "lazy" }}" decoding="async">
   </div>
@@ -24,6 +24,11 @@ navKey: news
     {% if item.text %}<p class="news-card__text">{{ item.text | trim | escape }}</p>{% endif %}
     <span class="news-card__read" aria-hidden="true">Přečíst aktualitu <span>→</span></span>
   </div>
+  {% if item.image and featured %}
+  <div class="news-card__media">
+    <img src="{{ item.image | escape }}" alt="{{ (item.imageAlt or "") | escape }}" loading="{{ "eager" if featured else "lazy" }}" decoding="async">
+  </div>
+  {% endif %}
 </article>
 {% endmacro %}
 
