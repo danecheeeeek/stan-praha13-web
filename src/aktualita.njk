@@ -1,0 +1,49 @@
+---js
+{
+  layout: "base.njk",
+  navKey: "news",
+  pagination: {
+    data: "news",
+    size: 1,
+    alias: "article",
+    before(items) {
+      return this.visible(items);
+    },
+  },
+  permalink: "/aktuality/{{ (article.slug or article.title) | slugify }}/index.html",
+  eleventyComputed: {
+    title: "{{ article.title | escape }} | STAN Praha 13",
+    description: "{{ article.text | trim | truncate(160) | escape }}",
+    canonicalPath: "{{ page.url }}",
+    articleParagraphs: ({ article }) =>
+      String(article.text || "").trim().split(/\r?\n\s*\r?\n/).filter(Boolean),
+  },
+}
+---
+<article>
+  <header class="page-hero news-article-hero">
+    {% if article.image %}
+    <img class="news-article-hero__image" src="{{ article.image | escape }}" alt="" fetchpriority="high">
+    {% endif %}
+    <div class="container">
+      <h1>{{ article.title | escape }}</h1>
+      {% if article.dateLabel %}<p>{{ article.dateLabel | escape }}</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="page-main">
+    <div class="container page-panel news-article-panel">
+      <div class="news-article-text">
+        {% for paragraph in articleParagraphs %}
+        <p>{{ paragraph | escape }}</p>
+        {% endfor %}
+      </div>
+      <footer class="news-article-actions">
+        {% if article.buttonUrl %}
+        <a class="button" href="{{ article.buttonUrl | escape }}"{% if article.external %} target="_blank" rel="noopener"{% endif %}>{{ (article.buttonLabel or "Otevřít odkaz") | escape }}</a>
+        {% endif %}
+        <a class="news-article-back" href="/aktuality.html"><span aria-hidden="true">←</span> Zpět na aktuality</a>
+      </footer>
+    </div>
+  </div>
+</article>

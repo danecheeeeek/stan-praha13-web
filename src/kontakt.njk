@@ -15,16 +15,20 @@ navKey: contact
 
 <section class="page-main">
   <div class="container page-panel">
-    <div class="section-title"><h2>Ozvěte se nám</h2><p>Vyberte si způsob, který vám nejvíce vyhovuje.</p></div>
-    <div class="contact-grid">
+    <ul class="contact-directory">
       {% for item in contact | visible %}
-      <article class="contact-card reveal">
-        <span class="contact-label">{{ item.label }}</span>
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.text }}</p>
-        <a class="button" href="{{ item.buttonUrl }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.buttonLabel }}</a>
-      </article>
+      {% set email = item.buttonUrl and item.buttonUrl.startsWith("mailto:") %}
+      <li class="contact-entry{% if email %} contact-entry--email{% endif %}">
+        {% if email %}
+        <h2>{{ item.label | escape }}</h2>
+        <a class="contact-entry__address" href="{{ item.buttonUrl | escape }}">{{ item.buttonLabel | escape }}</a>
+        {% else %}
+        <h2><a href="{{ item.buttonUrl | escape }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.label | escape }} <span aria-hidden="true">↗</span></a></h2>
+        <p class="contact-entry__account">{{ item.title | escape }}</p>
+        {% endif %}
+        {% if item.text %}<p>{{ item.text | escape }}</p>{% endif %}
+      </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 </section>

@@ -58,24 +58,6 @@ newsletterAuto: true
   </div>
 </section>
 
-<section class="election-cta" aria-labelledby="election-cta-title">
-  <div class="container election-cta__inner reveal">
-    <div class="election-cta__copy">
-      <div class="election-cta__heading">
-        <h2 id="election-cta-title"><span>Děkujeme!</span></h2>
-      </div>
-      <div class="election-cta__text">
-        <p>Jako nejsilnější liberální strana na Praze 13 dál jednáme o podobě nového vedení radnice. Zatím jsme podepsali memorandum o spolupráci, konkrétní podoba budoucí koalice se ale stále vyjednává.</p>
-        <p>Důvěru, kterou jste nám dali, bereme vážně. Právě proto věnujeme vyjednávání čas a trváme na podmínkách, které nám umožní plnit to, co jsme vám slíbili.</p>
-      </div>
-      <div class="election-cta__actions">
-        <a class="button election-cta__button election-cta__button--primary" href="/program.html">Poznejte naše priority</a>
-        <a class="button election-cta__button election-cta__button--secondary" href="/tym.html">Seznamte se s týmem</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="content-wrap">
   <div class="container">
     <div class="home-panel reveal">
@@ -93,7 +75,9 @@ newsletterAuto: true
           </div>
           <h2>{{ card.title }}</h2>
           <p>{{ card.text }}</p>
-          <a class="button" href="{{ card.buttonUrl }}">{{ card.buttonLabel }}</a>
+          <a class="card-link card-link--stretched" href="{{ card.buttonUrl }}">
+            <span class="button">{{ card.buttonLabel }}</span>
+          </a>
         </article>
         {% endfor %}
       </div>
