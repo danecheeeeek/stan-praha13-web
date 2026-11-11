@@ -14,26 +14,13 @@
   },
   {
     "visible": true,
-    "style": "volunteer",
-    "title": "Pomozte v kampani",
-    "text": "Pomozte s roznosem letáků, na akcích nebo při kontaktní kampani v ulicích. Napište nám a společně se domluvíme, co vám bude vyhovovat.",
-    "actions": [
-      {
-        "label": "Poslat e-mail",
-        "url": "mailto:vojta.ludvik@stan.cz?subject=Chci%20pomoci%20v%20kampani%20STAN%20Praha%2013",
-        "external": false
-      }
-    ]
-  },
-  {
-    "visible": true,
     "style": "tip",
     "title": "Pošlete nám podnět",
     "text": "Znáte problém ve svém okolí nebo máte návrh, co na Třináctce zlepšit? Napište nám.",
     "actions": [
       {
         "label": "Poslat podnět",
-        "url": "mailto:vojta.ludvik@stan.cz?subject=Podn%C4%9Bt%20pro%20Prahu%2013",
+        "url": "mailto:vojtech.ludvik@stan.cz?subject=Podn%C4%9Bt%20pro%20Prahu%2013",
         "external": false
       }
     ]

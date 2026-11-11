@@ -75,7 +75,9 @@ newsletterAuto: true
           </div>
           <h2>{{ card.title }}</h2>
           <p>{{ card.text }}</p>
-          <a class="button" href="{{ card.buttonUrl }}">{{ card.buttonLabel }}</a>
+          <a class="card-link card-link--stretched" href="{{ card.buttonUrl }}">
+            <span class="button">{{ card.buttonLabel }}</span>
+          </a>
         </article>
         {% endfor %}
       </div>

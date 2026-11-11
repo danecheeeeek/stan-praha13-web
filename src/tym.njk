@@ -19,16 +19,19 @@ navKey: team
     <div class="candidate-stack">
       {% for candidate in visibleCandidates %}
       {% if candidate.featured %}
-      <article class="candidate-profile reveal">
+      <article class="candidate-profile reveal" aria-labelledby="team-member-{{ candidate.number }}">
         <div class="candidate-portrait-zone candidate-color-{{ candidate.color }}">
           <img class="candidate-cutout" src="{{ candidate.image }}" alt="{{ candidate.name }}">
         </div>
         <div class="candidate-copy">
-          {% if candidate.number == 1 %}
-          <span class="candidate-number">{{ candidate.positionLabel }}</span>
+          <h2 id="team-member-{{ candidate.number }}">{{ candidate.name }}</h2>
+          {% if candidate.functions and candidate.functions.length %}
+          <ul class="candidate-functions" aria-label="Funkce v samosprávě">
+            {% for function in candidate.functions %}
+            <li class="candidate-function">{{ function | escape }}</li>
+            {% endfor %}
+          </ul>
           {% endif %}
-          <h3>{{ candidate.name }}</h3>
-          <p class="candidate-role">{{ candidate.role }}</p>
           <p class="candidate-annotation">{{ candidate.annotation }}</p>
         </div>
       </article>

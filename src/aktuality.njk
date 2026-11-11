@@ -6,25 +6,55 @@ title: Aktuality | STAN Praha 13
 description: Aktuality Starostů a nezávislých Praha 13.
 navKey: news
 ---
+{% set publishedNews = news | visible | newestNewsFirst %}
+{% set featuredNews = publishedNews | first %}
+
+{% macro newsCard(item, heading, featured) %}
+<article class="news-card{% if featured %} news-card--featured{% elif not item.image %} news-card--text{% endif %}">
+  {% if item.image %}
+  <div class="news-card__media">
+    <img src="{{ item.image | escape }}" alt="{{ (item.imageAlt or "") | escape }}" loading="{{ "eager" if featured else "lazy" }}" decoding="async">
+  </div>
+  {% endif %}
+  <div class="news-card__copy">
+    {% if item.dateLabel %}<span class="news-card__date">{{ item.dateLabel | escape }}</span>{% endif %}
+    <{{ heading }} class="news-card__title">
+      <a href="/aktuality/{{ (item.slug or item.title) | slugify }}/">{{ item.title | escape }}</a>
+    </{{ heading }}>
+    {% if item.text %}<p class="news-card__text">{{ item.text | trim | escape }}</p>{% endif %}
+    <span class="news-card__read" aria-hidden="true">Přečíst aktualitu <span>→</span></span>
+  </div>
+</article>
+{% endmacro %}
+
 <section class="page-hero">
   <div class="container">
     <h1>Aktuality</h1>
-    <p>Akce, místní témata a novinky z naší práce pro Prahu 13. Další články a fotografie budeme postupně doplňovat.</p>
+    <p>Akce, místní témata a novinky z naší práce pro Prahu 13.</p>
   </div>
 </section>
 
-<section class="page-main">
-  <div class="container page-panel">
-    <div class="section-title"><h2>Nejnovější</h2><p>Sledujte, co chystáme, a přijďte se s námi potkat na Třináctce.</p></div>
+<section class="page-main" aria-label="Přehled aktualit">
+<div class="container page-panel news-feed">
+  {% if featuredNews %}
+  {{ newsCard(featuredNews, "h2", true) }}
+  {% endif %}
+
+  {% if publishedNews.length and (not featuredNews or publishedNews.length > 1) %}
+  <section{% if featuredNews %} aria-labelledby="dalsi-aktuality"{% else %} aria-label="Přehled aktualit"{% endif %}>
+    {% if featuredNews %}
+    <h2 class="news-archive-title" id="dalsi-aktuality">Další aktuality</h2>
+    {% endif %}
     <div class="news-grid">
-      {% for item in news | visible %}
-      <article class="news-card reveal">
-        <span class="news-date">{{ item.dateLabel }}</span>
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.text }}</p>
-        {% if item.buttonUrl %}<a class="button" href="{{ item.buttonUrl }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.buttonLabel }}</a>{% endif %}
-      </article>
+      {% for item in publishedNews %}
+      {% if item != featuredNews %}
+      {{ newsCard(item, "h3" if featuredNews else "h2", false) }}
+      {% endif %}
       {% endfor %}
     </div>
-  </div>
+  </section>
+  {% elif not publishedNews.length %}
+  <p class="news-error">Zatím jsme nezveřejnili žádnou aktualitu.</p>
+  {% endif %}
+</div>
 </section>
