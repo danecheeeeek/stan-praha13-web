@@ -38,7 +38,7 @@ Funkce odpovídají výpisu zastupitelstva Prahy 13 dodanému 5. 11. 2026. U Voj
 Repozitář obsahuje soubor `.pages.yml`, takže po připojení repozitáře na [Pages CMS](https://pagescms.org/) uvidíte editor aktualit, carouselu, kandidátů, programu a úvodních karet. Každá položka programu obsahuje číslo (u bodů), nadpis, žluté bubliny a popis.
 
 - **Adresa aktuality** je krátký jedinečný název bez mezer a diakritiky, například `prochazka-prahou-13`. Po zveřejnění ji neměňte, aby zůstaly funkční odkazy.
-- **Hlavní fotografie** je volitelná. Na počítači se zobrazí vlevo od textu, na mobilu nad textem. Bez fotografie zabere text celou šířku.
+- **Hlavní fotografie** je volitelná. U nejnovější aktuality se na počítači zobrazí vpravo od textu, na mobilu pod textem. U ostatních aktualit se zobrazí v kartách podle jejich rozložení. Bez fotografie zabere text celou šířku.
 - **Podrobnosti** a **další fotografie** jsou volitelné. Pokud něco vyplníte, web automaticky přidá tlačítko „Zobrazit podrobnosti“.
 - **Externí odkaz** může vést například na Facebook nebo Instagram.
 - Přepínač **Zobrazit také v carouselu na úvodní stránce** vytvoří z aktuality další okno carouselu. Tlačítko v tomto okně vede přímo na danou aktualitu a případné podrobnosti se po otevření automaticky rozbalí.

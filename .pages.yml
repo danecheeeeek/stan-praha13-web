@@ -81,6 +81,11 @@ content:
       - name: visible
         label: Zobrazit aktualitu
         type: boolean
+      - name: slug
+        label: Adresa aktuality
+        type: string
+        required: true
+        description: Krátký jedinečný název bez mezer a diakritiky. Po zveřejnění ho neměňte.
       - name: dateLabel
         label: Datum nebo štítek
         type: string
@@ -90,6 +95,13 @@ content:
         label: Nadpis
         type: string
         required: true
+      - name: image
+        label: Hlavní fotografie
+        type: image
+      - name: imageAlt
+        label: Popis fotografie pro čtečky
+        type: string
+        description: Vyplňte, pokud je přidaná hlavní fotografie.
       - name: text
         label: Text aktuality
         type: text
