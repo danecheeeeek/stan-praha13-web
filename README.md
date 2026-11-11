@@ -29,6 +29,8 @@ Texty, fotografie a odkazy běžných stránek lze před nasazením upravit př�
 
 Repozitář obsahuje soubor `.pages.yml`, takže po připojení repozitáře na [Pages CMS](https://pagescms.org/) uvidíte editor aktualit, carouselu, kandidátů, programu a úvodních karet. Každá položka programu obsahuje číslo (u bodů), nadpis, žluté bubliny a popis.
 
+Funkce členů týmu lze spravovat v Pages CMS v sekci **Náš tým**. Pořadí položek v poli „Funkce v samosprávě“ určuje pořadí žlutých bublin na stránce týmu.
+
 - **Adresa aktuality** je krátký jedinečný název bez mezer a diakritiky, například `prochazka-prahou-13`. Po zveřejnění ji neměňte, aby zůstaly funkční odkazy.
 - **Hlavní fotografie** je volitelná. Na počítači se zobrazí vlevo od textu, na mobilu nad textem. Bez fotografie zabere text celou šířku.
 - **Podrobnosti** a **další fotografie** jsou volitelné. Pokud něco vyplníte, web automaticky přidá tlačítko „Zobrazit podrobnosti“.

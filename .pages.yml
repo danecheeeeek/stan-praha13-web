@@ -105,19 +105,19 @@ content:
         type: boolean
 
   - name: candidates
-    label: Kandidáti
+    label: Náš tým
     type: file
     path: src/_data/candidates.json
     format: json
     list: true
     fields:
       - name: visible
-        label: Zobrazit kandidáta
+        label: Zobrazit člena týmu
         type: boolean
       - name: featured
         label: Velký profil
         type: boolean
-        description: Zapněte pro prvních sedm kandidátů s velkou fotografií a medailonkem.
+        description: Zapněte pro členy týmu s velkou fotografií a medailonkem.
       - name: number
         label: Číslo na kandidátce
         type: number
@@ -130,8 +130,12 @@ content:
         label: Jméno
         type: string
       - name: role
-        label: Povolání nebo role
+        label: Povolání (archiv)
         type: text
+      - name: functions
+        label: Funkce v samosprávě
+        type: string
+        list: true
       - name: annotation
         label: Medailonek
         type: text
