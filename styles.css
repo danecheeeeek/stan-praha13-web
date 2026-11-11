@@ -687,6 +687,13 @@ h3 {
   font-size: clamp(19px, 1.8vw, 27px);
 }
 
+@media (min-width: 761px) {
+  .team-title-hero h1 {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 .page-main {
   position: relative;
   z-index: 2;
