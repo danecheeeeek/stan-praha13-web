@@ -132,10 +132,12 @@ content:
       - name: role
         label: Povolání (archiv)
         type: text
+        description: Uchovaný profesní údaj. Na stránce Náš tým se zobrazují funkce níže.
       - name: functions
         label: Funkce v samosprávě
         type: string
         list: true
+        description: Každou funkci vložte samostatně. Na webu se zobrazí jako bubliny pod sebou, ve stejném pořadí.
       - name: annotation
         label: Medailonek
         type: text

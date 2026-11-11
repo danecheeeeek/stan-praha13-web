@@ -17,7 +17,7 @@ Alternativně lze použít `npm install` a `npm run dev`; náhled pak běží na
 ## Stránky
 
 - `index.html` – úvodní carousel ovládaný tečkami, klávesnicí nebo tažením, představení týmu, programu a možností zapojení
-- `tym.html` – kandidátka: 7 velkých profilů s fotografiemi a kompaktní seznam kandidátů 8–35
+- `tym.html` – šest profilů týmu s fotografiemi, aktuálními funkcemi v bublinách a medailonky
 - `program.html` – interaktivní programová mapa s devíti body, Korzem Hůrka a Radlickou radiálou
 - `aktuality.html` – aktuality a události s volitelnými fotografiemi a rozbalovacími podrobnostmi
 - `kontakt.html` – kontaktní údaje a sociální sítě
@@ -25,11 +25,17 @@ Alternativně lze použít `npm install` a `npm run dev`; náhled pak běží na
 
 Texty, fotografie a odkazy běžných stránek lze před nasazením upravit přímo v HTML souborech. Aktuality a události pro carousel se spravují podle návodu níže.
 
+## Funkce na stránce Náš tým
+
+V Pages CMS otevřete **Náš tým** a u konkrétního člověka upravte seznam **Funkce v samosprávě**. Každá položka vytvoří jednu bublinu; pořadí položek určuje pořadí bublin pod jménem. Prázdný seznam nezobrazí žádnou bublinu. Původní profesní údaje zůstaly uchované v poli **Povolání (archiv)** a na stránce se nezobrazují.
+
+Data jsou v `src/_data/candidates.json`, šablona v `src/tym.njk` a vzhled bublin ve `styles.css`. Po změně zdrojů sestavte web pomocí `npm run build`; výsledek je ve složce `_site`. Přiložený kořenový `tym.html` už obsahuje aktuální úpravu a lze ho nahrát spolu s `styles.css`. Ostatní kořenové stránky mají pouze obnovený odkaz na verzi stylů.
+
+Funkce odpovídají výpisu zastupitelstva Prahy 13 dodanému 5. 11. 2026. U Vojtěcha Ludvíka je na přání uvedena pouze funkce místostarosty. U Daniela Adamova je nejprve výbor pro výchovu a vzdělávání, poté výbor pro Agendu 21. Bubliny mají písmo 17 px na počítači a 16 px na mobilu. Mezera pod jménem je 10 px, mezi bublinami 5 px a před medailonkem 12 px.
+
 ## Aktuality, fotografie a úvodní carousel přes Pages CMS
 
 Repozitář obsahuje soubor `.pages.yml`, takže po připojení repozitáře na [Pages CMS](https://pagescms.org/) uvidíte editor aktualit, carouselu, kandidátů, programu a úvodních karet. Každá položka programu obsahuje číslo (u bodů), nadpis, žluté bubliny a popis.
-
-Funkce členů týmu lze spravovat v Pages CMS v sekci **Náš tým**. Pořadí položek v poli „Funkce v samosprávě“ určuje pořadí žlutých bublin na stránce týmu.
 
 - **Adresa aktuality** je krátký jedinečný název bez mezer a diakritiky, například `prochazka-prahou-13`. Po zveřejnění ji neměňte, aby zůstaly funkční odkazy.
 - **Hlavní fotografie** je volitelná. Na počítači se zobrazí vlevo od textu, na mobilu nad textem. Bez fotografie zabere text celou šířku.

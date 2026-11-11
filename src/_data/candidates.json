@@ -6,10 +6,12 @@
     "positionLabel": "Lídr kandidátky",
     "name": "Vojtěch Ludvík",
     "role": "Paralegal v advokátní kanceláři, asistent místopředsedy ústavně-právního výboru PSP ČR, hokejista",
-    "functions": ["místostarosta pro územní rozvoj a veřejný prostor a moderní komunikační média"],
     "annotation": "Milí sousedé, Praha 13 je skvělá, ale věřím, že radnici prospěje nová energie a čerstvý pohled. I po návratu ze studií práv v USA vnímám Prahu jako evropskou metropoli s obrovským potenciálem pro zlepšení. Chci Prahu 13, která pečuje o zeleň a veřejný prostor, plánuje rozvoj s ambicí i rozumem a nebojí se inspirovat tím nejlepším z moderních evropských měst. Třináctka potřebuje dlouhodobou vizi a transparentnější radnici. Právě to s mým zkušeným týmem přinášíme.",
     "image": "/assets/images/vojtech-ludvik-profile.webp",
-    "color": "green"
+    "color": "green",
+    "functions": [
+      "místostarosta"
+    ]
   },
   {
     "visible": true,
@@ -18,10 +20,14 @@
     "positionLabel": "Kandidátka č. 2",
     "name": "Šárka Kuželová",
     "role": "Ředitelka neziskové organizace se zaměřením na děti odcházející z dětských domovů, producentka a scenáristka",
-    "functions": ["radní", "předsedkyně výboru pro dopravu a bezpečnost", "místopředsedkyně finančního výboru"],
     "annotation": "Mojí prioritou je zodpovědný rozvoj naší městské části tak, aby Praha 13 byla bezpečným, zeleným a upraveným domovem pro nás všechny. Mým hlavním cílem je kultivovaný veřejný prostor, na který budeme právem pyšní. Je nutné navýšit počty policejních hlídek, aby se obyvatelé cítili bezpečně v každé denní době. Zasloužíme si důstojné okolí stanic metra i ulice bez zbytečného vandalismu. Kvalitní veřejný prostor musí nabízet bezpečné zázemí pro rodiny s dětmi, funkční sportoviště a dostatek míst pro relaxaci.",
     "image": "/assets/images/sarka-kuzelova-profile.webp",
-    "color": "pink"
+    "color": "pink",
+    "functions": [
+      "radní",
+      "předsedkyně výboru pro dopravu a bezpečnost",
+      "místopředsedkyně finančního výboru"
+    ]
   },
   {
     "visible": true,
@@ -30,10 +36,12 @@
     "positionLabel": "Kandidát č. 3",
     "name": "Aleš Vícha",
     "role": "Dětský onkolog",
-    "functions": ["radní"],
     "annotation": "Zdraví, prevence a propojení zdravotních a sociálních služeb jsou témata, která musí radnice aktivně řešit. Populace stárne a Praze 13 se tento trend nevyhne. Musíme proto včas hledat moderní a efektivní řešení, která pomohou zvládat rostoucí tlak na zdravotnictví i sociální služby. Řešit budu i připravenost Prahy 13 na krizové situace.",
     "image": "/assets/images/ales-vicha-profile.webp",
-    "color": "purple"
+    "color": "purple",
+    "functions": [
+      "radní"
+    ]
   },
   {
     "visible": true,
@@ -42,10 +50,12 @@
     "positionLabel": "Kandidát č. 4",
     "name": "Jiří Mašek",
     "role": "Ředitel Střediska sociálních služeb Prahy 13 – Lukáš",
-    "functions": ["předseda výboru pro životní prostředí"],
     "annotation": "Kandiduji proto, že chci přispět k tomu, aby naše Praha 13 fungovala otevřeně, srozumitelně a s ohledem na lidi, kteří tu žijí. Moje práce je pomáhat seniorům žít důstojně a spokojeně. Tahle práce mi dává hluboký smysl. Každý den vidím, jak je důležité být pro lidi oporou. Proto mám potřebu být užitečný i mimo svou profesi.",
     "image": "/assets/images/jiri-masek-profile.webp",
-    "color": "yellow"
+    "color": "yellow",
+    "functions": [
+      "předseda výboru pro životní prostředí"
+    ]
   },
   {
     "visible": true,
@@ -54,10 +64,13 @@
     "positionLabel": "Kandidát č. 5",
     "name": "Daniel Adamov",
     "role": "Student Právnické fakulty UK, tajemník Mladých Starostů v Praze",
-    "functions": ["místopředseda výboru pro výchovu a vzdělávání", "místopředseda výboru pro Agendu 21"],
     "annotation": "Téměř celý život bydlím na Hůrce a nyní studuji práva na Karlově univerzitě. Na radnici chci přinést svěží a lehce drzou energii, aby naše městská část nebyla jen sídlištěm na přespávání, ale místem pro život a kulturu na úrovni. Chci být hlasem mladých lidí, kterých se budoucí rozvoj Třináctky dotkne nejvíc.",
     "image": "/assets/images/daniel-adamov-profile.webp",
-    "color": "green"
+    "color": "green",
+    "functions": [
+      "místopředseda výboru pro výchovu a vzdělávání",
+      "místopředseda výboru pro Agendu 21"
+    ]
   },
   {
     "visible": true,
@@ -66,9 +79,11 @@
     "positionLabel": "Kandidát č. 6",
     "name": "Václav Vorlíček",
     "role": "Člen týmu náměstka primátora pro územní rozvoj Petra Hlaváčka",
-    "functions": ["místopředseda výboru pro územní rozvoj"],
     "annotation": "Již osm let pracuji v týmu náměstka primátora pro územní rozvoj a architekta Petra Hlaváčka, díky němuž se nastartoval rozvoj Prahy a rozjelo mnoho projektů. Během této doby jsem nabyl cenné zkušenosti s řízením a projednáváním celé řady projektů, které bych chtěl uplatnit tam, kde žiji, vyrůstal jsem a chodil do školy. Chci Prahu 13, která se stará o svůj rozvoj a nebojí se odvážných projektů, které mají úroveň a smysl.",
     "image": "/assets/images/vaclav-vorlicek-profile.webp",
-    "color": "purple"
+    "color": "purple",
+    "functions": [
+      "místopředseda výboru pro územní rozvoj"
+    ]
   }
 ]
