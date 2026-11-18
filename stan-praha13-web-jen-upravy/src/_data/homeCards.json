@@ -1,0 +1,32 @@
+[
+  {
+    "visible": true,
+    "title": "Náš tým",
+    "text": "Možná nás znáte ze sousedství. Na radnici Prahy 13 nás za Starosty zasedá šest. Poznejte, kdo vás zastupuje a čemu se na radnici věnuje.",
+    "image": "/assets/images/tym-praha13.webp",
+    "imageAlt": "Sedm hlavních kandidátů Starostů Praha 13",
+    "artClass": "art-team",
+    "buttonLabel": "Seznamte se s kandidáty",
+    "buttonUrl": "/tym.html"
+  },
+  {
+    "visible": true,
+    "title": "Náš program",
+    "text": "V programu najdete naše priority pro Třináctku, od dopravy a škol po veřejný prostor.",
+    "image": "",
+    "imageAlt": "Programové priority",
+    "artClass": "art-program",
+    "buttonLabel": "Prohlédnout si celý program",
+    "buttonUrl": "/program.html"
+  },
+  {
+    "visible": true,
+    "title": "Zapojte se",
+    "text": "Měňte Třináctku s námi! Přidejte se ke Starostům nebo se zapojte do našich akcí a přípravy programu.",
+    "image": "/assets/images/zapojte-se-tym.webp",
+    "imageAlt": "Skupinová fotografie Starostů Praha 13",
+    "artClass": "",
+    "buttonLabel": "Chci se zapojit",
+    "buttonUrl": "/zapojte-se.html"
+  }
+]
