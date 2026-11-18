@@ -850,10 +850,10 @@ h3 {
   min-width: 0;
   align-self: center;
   padding: clamp(28px, 3.8vw, 54px);
-  color: var(--ink);
-  font-family: "Oldschool Grotesk", Impact, sans-serif;
+  color: #000000;
+  font-family: "Feature Text", Georgia, serif;
   font-size: 17px;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .program-index,
@@ -872,7 +872,7 @@ h3 {
 .candidate-copy h2 {
   margin: 0 0 10px;
   color: var(--pink);
-  font-size: clamp(40px, 4.2vw, 64px);
+  font-size: clamp(54px, 5.5vw, 84px);
 }
 
 .candidate-functions {
@@ -897,6 +897,7 @@ h3 {
 
 .candidate-annotation {
   margin: 0;
+  color: #000000;
 }
 
 .compact-candidates-section {
@@ -2305,7 +2306,7 @@ h3 {
   }
 
   .candidate-copy h2 {
-    font-size: clamp(38px, 5.7vw, 54px);
+    font-size: clamp(50px, 6.6vw, 70px);
   }
 }
 
@@ -2733,13 +2734,18 @@ h3 {
     border-radius: 999px;
     font-size: 12px;
     box-shadow: none;
+    filter: none;
+    -webkit-appearance: none;
+    appearance: none;
     transform: none;
   }
 
   .newsletter-trigger:hover,
-  .newsletter-trigger:focus-visible {
+  .newsletter-trigger:focus-visible,
+  .newsletter-trigger:active {
     padding-right: 11px;
     box-shadow: none;
+    filter: none;
   }
 
   body.menu-open .newsletter-trigger {
